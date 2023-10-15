@@ -1,0 +1,21 @@
+---
+import { PartyPopper } from "lucide-astro";
+import ServicesList from "./ServicesList.astro";
+---
+
+<div
+	class="px-5 lg:px-20 lg:py-20 py-5 flex flex-col gap-16 dark:border-t-zinc-800 border-t-2"
+	id="services"
+>
+	<h2 class="font-extrabold text-5xl max-w-2xl">
+		<span
+			class="bg-gradient-to-t from-green-800 to-green-500 bg-clip-text text-transparent"
+		>
+			Servicios
+		</span>
+		 que ofrezco
+		<PartyPopper class="inline h-12 w-12 text-green-600" />
+	</h2>
+
+	<ServicesList />
+</div>

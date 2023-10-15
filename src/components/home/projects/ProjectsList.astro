@@ -1,0 +1,46 @@
+---
+import ProjectCard from "./ProjectCard.astro";
+import nivalImg from "@/assets/projects/nival.png";
+import uLPImg from "@/assets/projects/your-app-landing.png";
+import devstopiaImg from "@/assets/projects/devstopia-m.png";
+import xoImg from "@/assets/projects/xo-m.png";
+---
+
+<div class={"grid lg:grid-cols-2 gap-10"}>
+	<ProjectCard
+		title="Nival Digital - Landing Page"
+		description="Diseñé y desarrolle un landing page para una empresa que ofrece diversos servicios, desde programación hasta ciencia de datos. Cada detalle, desde la paleta de colores hasta la disposición de los elementos, se ajusta a la visión del cliente."
+		link="https://nivaldigital.com"
+		github="https://github.com/mendoza000/nival-digital"
+		img={nivalImg}
+		tags={["Next.js", "TailwindCSS", "Zustand", "Typescript", "auto-type.js"]}
+		alt="nival-screen"
+	/>
+	<ProjectCard
+		title="Your App Landing - Landing Page"
+		description="En tan solo 4 horas, diseñé una llamativa landing page para una aplicación móvil utilizando Vue.js y Tailwind CSS. Destaco especialmente el diseño, que considero hermoso. Este proyecto resalta mi habilidad para crear soluciones visuales en tiempo récord."
+		link="https://your-app-landing.vercel.app/"
+		github="https://github.com/mendoza000/your-app-landing"
+		img={uLPImg}
+		tags={["Vue.js", "TailwindCSS", "Typescript", "Vite"]}
+		alt="nival-screen"
+	/>
+	<ProjectCard
+		title="Devstopia - Blog"
+		description="Devstopia es mi espacio en línea, donde narro mi trayecto como desarrollador y comparto tutoriales para proyectos asombrosos. Este blog, construido con JAMStack, es la convergencia de desarrollo y creatividad, diseñado para inspirar tu propio camino en la programación."
+		link="https://devstopia.vercel.app/"
+		github="https://github.com/mendoza000/devstopia"
+		img={devstopiaImg}
+		tags={["Next.js", "TailwindCSS", "Typescript", "MDX"]}
+		alt="nival-screen"
+	/>
+	<ProjectCard
+		title="XO - Juego web"
+		description="XO, un juego web de tres en línea que diseñé utilizando Sass. En uno de mis primeros proyectos, también integré partidas contra la CPU, aunque de manera básica, ya que marcaba posiciones disponibles de forma aleatoria."
+		link="https://xo000.vercel.app/"
+		github="https://github.com/mendoza000/xo"
+		img={xoImg}
+		tags={["Vite", "React", "Sass", "Javascript", "Redux", "Animate.css"]}
+		alt="nival-screen"
+	/>
+</div>

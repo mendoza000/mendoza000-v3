@@ -1,0 +1,56 @@
+---
+import {
+	IconBrandGolang,
+	IconBrandGit,
+	IconBrandJavascript,
+	IconBrandNextjs,
+	IconBrandTailwind,
+	IconBrandTypescript,
+	IconBrandSupabase,
+} from "@tabler/icons-react";
+import HeaderSkill from "@/components/ui/HeaderSkill";
+---
+
+<div class="min-h-[30rem] relative lg:min-h-full">
+	<HeaderSkill
+		className={"lg:top-36 lg:left-64 top-20 left-32  bg-yellow-500 border-yellow-300 animate-bounce-slow-2"}
+	>
+		<IconBrandJavascript size={60} />
+	</HeaderSkill>
+
+	<HeaderSkill
+		className={"lg:top-56 lg:right-24 top-36 right-0 bg-red-300 border-red-200 animate-bounce-slow"}
+	>
+		<IconBrandGit size={60} />
+	</HeaderSkill>
+
+	<HeaderSkill
+		className={"lg:top-56 lg:left-20 left-0 top-36 bg-gray-400 border-gray-300 animate-bounce-slow-3"}
+	>
+		<IconBrandNextjs size={60} />
+	</HeaderSkill>
+
+	<HeaderSkill
+		className={"lg:bottom-52 left-12 bottom-20 bg-cyan-400 border-cyan-300 animate-bounce-slow-2"}
+	>
+		<IconBrandTailwind size={60} />
+	</HeaderSkill>
+
+	<HeaderSkill
+		className={"top-80 lg:right-64 right-10 bg-blue-600 border-blue-400 animate-bounce-slow"}
+	>
+		<IconBrandTypescript size={60} />
+	</HeaderSkill>
+
+	<HeaderSkill
+		className={"bottom-60 right-0 bg-blue-400 border-blue-200 animate-bounce-slow-3 hidden lg:flex"}
+	>
+		<IconBrandGolang size={60} />
+	</HeaderSkill>
+
+	<HeaderSkill
+		className={"bottom-40 right-52 bg-gray-800 border-gray-700 animate-bounce-slow-2 hidden lg:flex"}
+	>
+		<IconBrandSupabase size={60} />
+	</HeaderSkill>
+</div>

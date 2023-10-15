@@ -1,0 +1,50 @@
+---
+import Button from "@/components/ui/Button";
+import { Image } from "astro:assets";
+
+interface Props {
+	img: any;
+	title: string;
+	description: string;
+	link: string;
+	github: string;
+	tags: string[];
+	alt: string;
+}
+
+const props: Props = Astro.props;
+---
+
+<div
+	class="px-5 py-7 rounded-xl dark:bg-zinc-800 bg-white flex flex-col gap-6 duration-200 shadow-xl"
+>
+	<h4 class="font-bold capitalize text-xl">{props.title}</h4>
+	<div class="grid lg:grid-cols-2 gap-5">
+		<p class="dark:opacity-40 opacity-80">{props.description}</p>
+		<Image
+			src={props.img}
+			alt="project-screen"
+			class={"rounded-lg"}
+			draggable="false"
+		/>
+	</div>
+
+	<div class="flex gap-2 flex-wrap">
+		{
+			props.tags.map((tag) => (
+				<span class="inline-block dark:bg-zinc-900 bg-zinc-800 px-3 py-1 text-sm font-semibold text-white rounded-full hover:bg-green-700 duration-200 cursor-default  ">
+					{tag}
+				</span>
+			))
+		}
+	</div>
+
+	<div class="flex gap-5">
+		<Button variant="primary">
+			<a href={props.link} target="_blank">Ver proyecto</a>
+		</Button>
+		<Button variant="outline">
+			<a href={props.github} target="_blank">Ver codigo</a>
+		</Button>
+	</div>
+</div>

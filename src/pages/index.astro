@@ -1,0 +1,26 @@
+---
+import Experiences from "@/components/home/experience/Experiences.tsx";
+import Layout from "../layouts/Layout.astro";
+import Header from "@/components/home/Header.astro";
+import Navbar from "@/components/ui/Navbar.tsx";
+import Proyects from "@/components/home/projects/Proyects.astro";
+import Skills from "@/components/home/skills/Skills.tsx";
+import Services from "@/components/home/services/Services.astro";
+import Contact from "@/components/home/contact/Contact.astro";
+import Footer from "@/components/ui/Footer.astro";
+---
+
+<Layout title="MENDOZA000 | PORTFOLIO">
+	<main>
+		<Navbar client:only />
+		<Header />
+		<div class="overflow-y-hidden">
+			<Experiences client:load />
+			<Proyects />
+		</div>
+		<Skills client:load />
+		<Services />
+		<Contact />
+		<Footer />
+	</main>
+</Layout>

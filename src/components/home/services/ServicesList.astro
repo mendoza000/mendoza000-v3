@@ -1,0 +1,57 @@
+---
+import {
+	Cable,
+	Figma,
+	ShoppingCart,
+	TabletSmartphone,
+	Text,
+	Wrench,
+} from "lucide-react";
+import ServicesListItem from "./ServicesListItem.tsx";
+
+const iconClass = "h-7 w-7 inline";
+---
+
+<div class="grid lg:grid-cols-3 justify-center items-center gap-10">
+	<ServicesListItem
+		title="Landing pages"
+		desciption="Impulsa tu presencia en línea con una landing page cautivadora. Creamos una primera impresión que dejará a tus visitantes intrigados y ansiosos por explorar más. Tu historia comienza aquí."
+	>
+		<Text className={iconClass} />
+	</ServicesListItem>
+
+	<ServicesListItem
+		title="E-commerce"
+		desciption="Transforma tu visión de negocio en una tienda en línea de alto rendimiento. Nuestra experiencia te brinda una plataforma confiable y atractiva para llegar a tus clientes y expandir tus horizontes."
+	>
+		<ShoppingCart className={iconClass} />
+	</ServicesListItem>
+
+	<ServicesListItem
+		title="Diseño web"
+		desciption="El diseño web es nuestra pasión. Creamos sitios web que no solo son funcionales, sino también visualmente impresionantes. Cada detalle está cuidadosamente elaborado para reflejar la esencia de tu marca."
+	>
+		<Figma className={iconClass} />
+	</ServicesListItem>
+
+	<ServicesListItem
+		title="Mobile first"
+		desciption="El mundo se mueve a través de dispositivos móviles, y nosotros te ponemos en el centro. Diseñamos experiencias web que funcionan de manera excepcional en smartphones."
+	>
+		<TabletSmartphone className={iconClass} />
+	</ServicesListItem>
+
+	<ServicesListItem
+		title="Mantenimiento de sitios webs"
+		desciption="Tu sitio web merece atención constante. Nos encargamos de que tu presencia en línea esté siempre actualizada, segura y libre de problemas técnicos, para que puedas concentrarte en tu negocio."
+	>
+		<Wrench className={iconClass} />
+	</ServicesListItem>
+
+	<ServicesListItem
+		title="Creación de APIS"
+		desciption="Construimos puentes digitales que conectan aplicaciones y datos. Nuestras APIs están diseñadas para ser eficientes, seguras y escalables, facilitando la comunicación y la innovación en tu negocio."
+	>
+		<Cable className={iconClass} />
+	</ServicesListItem>
+</div>

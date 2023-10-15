@@ -1,0 +1,61 @@
+---
+import { ArrowDown, MessageCircle } from "lucide-astro";
+import Button from "@/components/ui/Button";
+import HeaderSkills from "./HeaderSkills.astro";
+---
+
+<script>
+	const theme = localStorage.getItem("theme");
+	const header = document.getElementById("header");
+	if (theme === "dark") {
+		header?.classList.remove("header-bg");
+		header?.classList.add("header-bg-dark");
+	} else {
+		header?.classList.remove("header-bg-dark");
+		header?.classList.add("header-bg");
+	}
+</script>
+
+<header
+	class={`
+		lg:px-20 py-20 lg:py-0 px-5 justify-center items-center min-h-screen lg:gap-10 gap-0 lg:grid-cols-2 grid min-w-[100vw] mx-auto
+	`}
+	id="header"
+>
+	<div class="flex flex-col gap-5 min-w-full">
+		<h1 class="text-5xl font-extrabold">
+			¡Hola! 👋
+			<br />
+			 Mi nombre es
+			<span
+				class="bg-gradient-to-t from-green-800 to-green-500 bg-clip-text text-transparent"
+				>Omar Mendoza.</span
+			>
+		</h1>
+		<p class="dark:opacity-50 opacity-90 max-w-3xl font-semibold">
+			Desarrollador web con experiencia en el frontend y backend, especializado
+			en tecnologías basadas en JavaScript y con dominio en Golang y otros.
+			Experto en bases de datos como MySQL, MongoDB y Supabase. Apasionado por
+			crear interfaces visuales hermosas y funcionales para una experiencia de
+			usuario excepcional.
+		</p>
+
+		<div class="flex gap-4">
+			<Button>
+				<a href="#contact" class="flex gap-2 hover:gap-3 duration-200"
+					><MessageCircle />Contáctame</a
+				>
+			</Button>
+			<Button variant="outline">
+				<a
+					target="_blank"
+					href="https://docs.google.com/document/d/16ezw6j-XlfdU02b7Vvx4jvFV1wllAjG0_8TVizTQOgE/edit?usp=drive_link"
+					class="flex gap-2 hover:gap-3 duration-200"
+					><ArrowDown />Descargar CV</a
+				>
+			</Button>
+		</div>
+	</div>
+
+	<HeaderSkills />
+</header>

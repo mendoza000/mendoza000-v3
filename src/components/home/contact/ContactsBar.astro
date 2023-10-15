@@ -1,0 +1,30 @@
+---
+import Button from "@/components/ui/Button.tsx";
+import { IconBrandGithub } from "@tabler/icons-react";
+import { IconBrandWhatsapp } from "@tabler/icons-react";
+import { IconBrandInstagram } from "@tabler/icons-react";
+import { IconBrandTwitter } from "@tabler/icons-react";
+---
+
+<div
+	class="flex-wrap gap-4 px-3 py-3 bg-zinc-800 rounded-2xl inline-flex max-w-md justify-between mt-5"
+>
+	<Button variant="secondary">
+		<a href="https://wa.me/+584163436789" target="_blank"
+			><IconBrandWhatsapp /></a
+		>
+	</Button>
+	<Button variant="secondary">
+		<a href="https://x.com/mendoza000x" target="_blank"><IconBrandTwitter /></a>
+	</Button>
+	<Button variant="secondary">
+		<a href="https://instagram.com/mendoza000x_" target="_blank"
+			><IconBrandInstagram /></a
+		>
+	</Button>
+	<Button variant="secondary">
+		<a href="https://github.com/mendoza000" target="_blank"
+			><IconBrandGithub /></a
+		>
+	</Button>
+</div>
