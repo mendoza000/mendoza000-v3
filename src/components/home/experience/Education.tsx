@@ -5,7 +5,7 @@ const Education = () => {
 		<div className="border-l-4 border-zinc-800 min-h-[20rem]">
 			<div className="flex gap-5 items-center -ml-[0.65rem]">
 				<div className="h-4 w-4 bg-zinc-800 rounded-full"></div>
-				<h3 className="font-semibold text-2xl">Formacón academica</h3>
+				<h3 className="font-semibold text-2xl">Formación academica</h3>
 			</div>
 			<p className=" opacity-70 ml-6">2020 - Actualidad</p>
 
