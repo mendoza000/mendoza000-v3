@@ -14,9 +14,10 @@ import {
 	IconBrandVue,
 	IconBrandSupabase,
 } from "@tabler/icons-react";
-import React from "react";
+import { useAutoAnimate } from "@formkit/auto-animate/react";
 import SkillItem from "./SkillItem";
 import type { ViewSkills } from "@/types";
+import { useEffect, useState } from "react";
 
 interface Props {
 	viewSkills: ViewSkills;
@@ -24,119 +25,107 @@ interface Props {
 
 const SkillsList = (props: Props) => {
 	const iconClass: JSX.ElementClass | string = "inline h-7 w-7";
+	const [selectSkills, setSelectSkills] = useState<any[]>([]);
+
+	const skills = [
+		{
+			name: "react",
+			category: ["frontend"],
+			icon: <IconBrandReact className={iconClass} />,
+		},
+		{
+			name: "typescript",
+			category: ["frontend", "language"],
+			icon: <IconBrandTypescript className={iconClass} />,
+		},
+		{
+			name: "javascript",
+			category: ["frontend", "language"],
+			icon: <IconBrandJavascript className={iconClass} />,
+		},
+		{
+			name: "redux",
+			category: ["frontend"],
+			icon: <IconBrandRedux className={iconClass} />,
+		},
+		{
+			name: "sass",
+			category: ["frontend"],
+			icon: <IconBrandSass className={iconClass} />,
+		},
+		{
+			name: "vue",
+			category: ["frontend"],
+			icon: <IconBrandVue className={iconClass} />,
+		},
+		{
+			name: "nextjs",
+			category: ["frontend"],
+			icon: <IconBrandNextjs className={iconClass} />,
+		},
+		{
+			name: "vite",
+			category: ["frontend"],
+			icon: <IconBrandVite className={iconClass} />,
+		},
+		{
+			name: "git",
+			category: ["other"],
+			icon: <IconBrandGit className={iconClass} />,
+		},
+		{
+			name: "nodejs",
+			category: ["backend"],
+			icon: <IconBrandNodejs className={iconClass} />,
+		},
+		{
+			name: "mongodb",
+			category: ["database", "backend"],
+			icon: <IconBrandMongodb className={iconClass} />,
+		},
+		{
+			name: "golang",
+			category: ["backend", "language"],
+			icon: <IconBrandGolang className={iconClass} />,
+		},
+		{
+			name: "mysql",
+			category: ["database", "backend"],
+			icon: <IconBrandMysql className={iconClass} />,
+		},
+		{
+			name: "supabase",
+			category: ["database", "backend"],
+			icon: <IconBrandSupabase className={iconClass} />,
+		},
+	];
+
+	useEffect(() => {
+		setSelectSkills(skills);
+	}, []);
+
+	useEffect(() => {
+		if (props.viewSkills === "all") {
+			setSelectSkills(skills);
+		} else {
+			setSelectSkills(
+				skills.filter((skill) => skill.category.includes(props.viewSkills))
+			);
+		}
+	}, [props.viewSkills]);
 
 	return (
 		<div className="rounded-2xl shadow-lg items-start bg-gradient-to-tr px-6 justify-center py-6 from-green-500 to-green-950">
 			<div className="flex flex-wrap gap-4">
-				<SkillItem
-					viewSkills={props.viewSkills}
-					name="react"
-					category={["frontend"]}
-				>
-					<IconBrandReact className={iconClass} />
-				</SkillItem>
-
-				<SkillItem
-					viewSkills={props.viewSkills}
-					name="typescript"
-					category={["frontend", "language"]}
-				>
-					<IconBrandTypescript className={iconClass} />
-				</SkillItem>
-
-				<SkillItem
-					viewSkills={props.viewSkills}
-					name="javascript"
-					category={["frontend", "language"]}
-				>
-					<IconBrandJavascript className={iconClass} />
-				</SkillItem>
-
-				<SkillItem
-					viewSkills={props.viewSkills}
-					name="redux"
-					category={["frontend"]}
-				>
-					<IconBrandRedux className={iconClass} />
-				</SkillItem>
-
-				<SkillItem
-					viewSkills={props.viewSkills}
-					name="sass"
-					category={["frontend"]}
-				>
-					<IconBrandSass className={iconClass} />
-				</SkillItem>
-
-				<SkillItem
-					viewSkills={props.viewSkills}
-					name="vue"
-					category={["frontend"]}
-				>
-					<IconBrandVue className={iconClass} />
-				</SkillItem>
-
-				<SkillItem
-					viewSkills={props.viewSkills}
-					name="nextjs"
-					category={["frontend"]}
-				>
-					<IconBrandNextjs className={iconClass} />
-				</SkillItem>
-
-				<SkillItem
-					viewSkills={props.viewSkills}
-					name="vite"
-					category={["frontend"]}
-				>
-					<IconBrandVite className={iconClass} />
-				</SkillItem>
-				<SkillItem
-					viewSkills={props.viewSkills}
-					name="git"
-					category={["other"]}
-				>
-					<IconBrandGit className={iconClass} />
-				</SkillItem>
-
-				<SkillItem
-					viewSkills={props.viewSkills}
-					name="nodejs"
-					category={["backend"]}
-				>
-					<IconBrandNodejs className={iconClass} />
-				</SkillItem>
-
-				<SkillItem
-					viewSkills={props.viewSkills}
-					name="mongodb"
-					category={["database", "backend"]}
-				>
-					<IconBrandMongodb className={iconClass} />
-				</SkillItem>
-
-				<SkillItem
-					viewSkills={props.viewSkills}
-					name="golang"
-					category={["backend", "language"]}
-				>
-					<IconBrandGolang className={iconClass} />
-				</SkillItem>
-
-				<SkillItem
-					viewSkills={props.viewSkills}
-					name="mysql"
-					category={["database", "backend"]}
-				>
-					<IconBrandMysql className={iconClass} />
-				</SkillItem>
-				<SkillItem
-					viewSkills={props.viewSkills}
-					name="supabase"
-					category={["database", "backend"]}
-				>
-					<IconBrandSupabase className={iconClass} />
-				</SkillItem>
+				{selectSkills.map((skill) => (
+					<SkillItem
+						viewSkills={props.viewSkills}
+						name={skill.name}
+						category={[...skill.category]}
+					>
+						{skill.icon}
+					</SkillItem>
+				))}
 			</div>
 		</div>
 	);

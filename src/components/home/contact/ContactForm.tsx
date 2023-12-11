@@ -65,7 +65,7 @@ const ContactForm = () => {
 			</label>
 
 			<button
-				className="px-4 py-2 bg-zinc-900 rounded-2xl gap-2 hover:gap-3 justify-center hover:bg-zinc-950 duration-200 font-semibold flex max-w-xs text-center mt-2 text-white"
+				className="px-4 py-2 bg-zinc-800 rounded-2xl gap-2 hover:gap-3 justify-center hover:bg-zinc-700 duration-200 font-semibold flex max-w-xs text-center mt-2 text-white"
 				type="submit"
 			>
 				Enviar correo

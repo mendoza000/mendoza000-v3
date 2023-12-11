@@ -11,7 +11,7 @@ type SkillCategory =
 
 interface Props {
 	name: string;
-	category: SkillCategory[];
+	category: SkillCategory[] | string[];
 	viewSkills: SkillCategory;
 	children: React.ReactNode;
 }
@@ -24,7 +24,7 @@ const SkillItem = (props: Props) => {
 					props.category.includes(props.viewSkills) ||
 					props.viewSkills === "all"
 						? ""
-						: "hidden"
+						: ""
 				}`}
 				data-tooltip-id={props.name}
 				data-tooltip-content={props.name.toUpperCase()}

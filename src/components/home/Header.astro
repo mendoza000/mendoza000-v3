@@ -2,6 +2,8 @@
 import { ArrowDown, MessageCircle } from "lucide-astro";
 import Button from "@/components/ui/Button";
 import HeaderSkills from "./HeaderSkills.astro";
+import { IconBrandJavascript } from "@tabler/icons-react";
+import { IconBrandGolang } from "@tabler/icons-react";
 ---
 
 <script>
@@ -18,7 +20,7 @@ import HeaderSkills from "./HeaderSkills.astro";
 
 <header
 	class={`
-		lg:px-20 py-20 lg:py-0 px-5 justify-center items-center min-h-screen lg:gap-10 gap-0 lg:grid-cols-2 grid min-w-[100vw] mx-auto
+		lg:px-20 py-20 lg:py-0 px-5 justify-center items-center min-h-screen lg:gap-10 gap-0 lg:grid-cols-2 lg:grid min-w-[100vw] mx-auto flex flex-col-reverse
 	`}
 	id="header"
 >
@@ -34,10 +36,15 @@ import HeaderSkills from "./HeaderSkills.astro";
 		</h1>
 		<p class="dark:opacity-50 opacity-90 max-w-3xl font-semibold">
 			Desarrollador web con experiencia en el frontend y backend, especializado
-			en tecnologías basadas en JavaScript y con dominio en Golang y otros.
-			Experto en bases de datos como MySQL, MongoDB y Supabase. Apasionado por
-			crear interfaces visuales hermosas y funcionales para una experiencia de
-			usuario excepcional.
+			en tecnologías basadas en <IconBrandJavascript
+				size={20}
+				className="inline dark:text-yellow-300 text-yellow-600"
+			/>JavaScript y con dominio en <IconBrandGolang
+				size={20}
+				className="inline dark:text-blue-300 text-blue-600"
+			/>Golang y otros. Experto en bases de datos como MySQL, MongoDB y
+			Supabase. Apasionado por crear interfaces visuales hermosas y funcionales
+			para una experiencia de usuario excepcional.
 		</p>
 
 		<div class="flex gap-4">
@@ -50,8 +57,7 @@ import HeaderSkills from "./HeaderSkills.astro";
 				<a
 					target="_blank"
 					href="https://docs.google.com/document/d/16ezw6j-XlfdU02b7Vvx4jvFV1wllAjG0_8TVizTQOgE/edit?usp=drive_link"
-					class="flex gap-2 hover:gap-3 duration-200"
-					><ArrowDown />Descargar CV</a
+					class="flex gap-2 hover:gap-3 duration-200"><ArrowDown />Abrir CV</a
 				>
 			</Button>
 		</div>
