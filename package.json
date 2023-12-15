@@ -12,6 +12,7 @@
   "dependencies": {
     "@astrojs/react": "^3.0.2",
     "@astrojs/tailwind": "^5.0.0",
+    "@astrojs/vercel": "^6.1.0",
     "@formkit/auto-animate": "^0.8.1",
     "@tabler/icons-react": "^2.35.0",
     "@types/react": "^18.0.21",
