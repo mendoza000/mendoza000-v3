@@ -43,10 +43,34 @@ const { title } = Astro.props;
 <style is:global>
 	@font-face {
 		font-family: "Subjectivity";
-		src: url("/Subjectivity-Regular.otf") format("woff2");
-		font-weight: normal;
+		src: url("/fonts/Subjectivity-Bold.otf") format("opentype");
 		font-style: normal;
 		font-display: swap;
+		font-weight: 700;
+	}
+
+	@font-face {
+		font-family: "Subjectivity";
+		src: url("/fonts/Subjectivity-Light.otf") format("opentype");
+		font-style: normal;
+		font-display: swap;
+		font-weight: 300;
+	}
+
+	@font-face {
+		font-family: "Subjectivity";
+		src: url("/fonts/Subjectivity-Regular.otf") format("opentype");
+		font-style: normal;
+		font-display: swap;
+		font-weight: 400;
+	}
+
+	@font-face {
+		font-family: "Subjectivity";
+		src: url("/fonts/Subjectivity-Medium.otf") format("opentype");
+		font-style: normal;
+		font-display: swap;
+		font-weight: 500;
 	}
 
 	html,
