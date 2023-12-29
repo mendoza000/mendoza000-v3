@@ -13,7 +13,9 @@ const Jobs = () => {
 			<ExperienceItem
 				title="Nival Digital - Landing page"
 				date="05-2023 - 06-2023"
-				skills={["NextJS", "Typescript", "TailwindCSS", "Zustand"]}
+				skills={
+					"Responsable de la maquetación y desarrollo de la landing page de la empresa. Creando asi la imagen principal de la empresa en internet. Usando tecnologías como React, NextJS, TailwindCSS, TypeScript, etc."
+				}
 			/>
 
 			<div className="flex gap-5 items-center -ml-[0.65rem] mt-5">

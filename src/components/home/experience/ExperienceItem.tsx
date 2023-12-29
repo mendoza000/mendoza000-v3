@@ -3,7 +3,7 @@ import React from "react";
 interface Props {
 	title?: string;
 	date?: string;
-	skills?: string[];
+	skills?: string;
 }
 
 const ExperienceItem = (props: Props) => {
@@ -11,14 +11,12 @@ const ExperienceItem = (props: Props) => {
 		<div className="ml-6 mt-5">
 			<div className="flex items-center gap-2 -ml-7">
 				<div className="h-1 w-5 bg-zinc-800"></div>
-				<h4 className="font-semibold">{props.title}</h4>
+				<h4 className="font-semibold text-green-500">{props.title}</h4>
 			</div>
-			<p className="text-sm opacity-70">{props.date}</p>
+			<p className="text-sm opacity-50">{props.date}</p>
 
-			<ul className="mt-3 opacity-90 list-disc ml-6">
-				{props.skills?.map((s: string) => {
-					return <li key={s}>{s}</li>;
-				})}
+			<ul className="mt-3 opacity-90 list-none ml-6">
+				<li>{props.skills}</li>
 			</ul>
 		</div>
 	);

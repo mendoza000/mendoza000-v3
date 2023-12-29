@@ -49,13 +49,13 @@ const Experiences = () => {
 					>
 						<>
 							<Award />
-							Formación academica
+							Formación académica
 						</>
 					</Button>
 				</div>
 			</div>
 
-			<div className="experience-bg  px-10 py-10 rounded-2xl shadow-lg overflow-y-scroll max-h-[25rem] text-white ">
+			<div className="px-10 py-10 rounded-2xl shadow-lg overflow-y-scroll max-h-[25rem] text-white bg-zinc-900">
 				{viewJobs ? <Jobs /> : <Education />}
 			</div>
 		</div>
