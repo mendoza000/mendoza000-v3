@@ -1,9 +1,14 @@
+const defaultTheme = require("tailwindcss/defaultTheme");
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
 	darkMode: "class",
 	content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
 	theme: {
 		extend: {
+			fontFamily: {
+				sans: ["Subjectivity", "Inter", ...defaultTheme.fontFamily.sans],
+			},
 			colors: {
 				"custom-dark": "#171717",
 				"custom-light": "#f9f4ef",
