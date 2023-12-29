@@ -12,7 +12,7 @@ const Navbar = () => {
 
 	return (
 		<nav
-			className={`lg:px-10 px-5 py-3 lg:py-4 fixed top-0 left-0 min-w-full flex flex-col lg:flex-row lg:justify-between z-30 bg-zinc-900 duration-300 lg:bg-opacity-0 lg:dark:bg-opacity-0 ${
+			className={`lg:px-10 px-5 py-3 lg:py-4 fixed top-0 left-0 min-w-full flex flex-col lg:flex-row lg:justify-between z-30 bg-zinc-900 duration-200 lg:bg-opacity-0 lg:dark:bg-opacity-0 ${
 				openMenu
 					? "min-h-screen bg-opacity-90 dark:bg-opacity-90 text-white"
 					: " min-h-0 bg-opacity-20 dark:bg-opacity-50"
@@ -40,7 +40,7 @@ const Navbar = () => {
 			</div>
 
 			<ul
-				className={`lg:border-green-800 lg:border-2 lg:rounded-xl lg:px-4 py-4 lg:py-2 lg:shadow-xl dark:shadow-lg lg:bg-green-800 lg:bg-opacity-10 gap-5 lg:backdrop-blur-md lg:flex ${
+				className={` lg:rounded-xl lg:px-2 py-4 lg:py-2 lg:shadow-xl dark:shadow-lg lg:bg-green-800 lg:bg-opacity-10 gap-5 lg:backdrop-blur-md lg:flex ${
 					!openMenu ? "hidden" : "flex flex-col"
 				}`}
 			>
