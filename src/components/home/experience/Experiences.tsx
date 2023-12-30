@@ -16,7 +16,7 @@ const Experiences = () => {
 			className="lg:px-20 px-5 grid lg:grid-cols-2 gap-10 py-20"
 			id="experiences"
 		>
-			<div className="flex flex-col order-last">
+			<div className="flex flex-col lg:order-last">
 				<h2 className="font-extrabold text-5xl ">
 					Mi{" "}
 					<span className="bg-gradient-to-t from-green-800 to-green-500 bg-clip-text text-transparent">
