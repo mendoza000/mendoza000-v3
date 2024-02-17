@@ -13,7 +13,7 @@ const Experiences = () => {
 
 	return (
 		<div
-			className="lg:px-20 px-5 grid lg:grid-cols-2 gap-10 py-20"
+			className="grid lg:grid-cols-2 gap-5 lg:gap-10 py-2 mx-auto max-w-7xl px-5 lg:px-0"
 			id="experiences"
 		>
 			<div className="flex flex-col lg:order-last">

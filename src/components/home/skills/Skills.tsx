@@ -23,7 +23,7 @@ const Skills = () => {
 
 	return (
 		<div
-			className="px-5 lg:px-20 lg:py-20 py-5 grid lg:grid-cols-2 gap-10 dark:border-t-zinc-800 border-t-2"
+			className="px-5 lg:px-0  lg:py-20 py-5 grid lg:grid-cols-2 gap-10 max-w-7xl mx-auto dark:border-t-zinc-800 border-t-2"
 			id="skills"
 		>
 			<div className="flex flex-col">
