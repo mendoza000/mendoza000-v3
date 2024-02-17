@@ -29,7 +29,7 @@ const Skills = () => {
 			<div className="flex flex-col">
 				<h2 className="font-extrabold text-5xl">
 					Mis{" "}
-					<span className="bg-gradient-to-t from-green-800 to-green-500 bg-clip-text text-transparent">
+					<span className="dark:text-green-500 text-green-700">
 						Habilidades{" "}
 					</span>
 					como desarrollador{" "}
@@ -37,7 +37,7 @@ const Skills = () => {
 				</h2>
 				<p className="text-xl mt-2">
 					Estas son las{" "}
-					<span className="bg-gradient-to-t from-green-800 to-green-500 bg-clip-text text-transparent font-bold">
+					<span className="dark:text-green-500 text-green-700 font-bold">
 						habilidades y tecnologias
 					</span>{" "}
 					que domino y que me permiten crear aplicaciones web de alta calidad.

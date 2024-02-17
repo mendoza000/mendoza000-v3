@@ -19,7 +19,7 @@ const Experiences = () => {
 			<div className="flex flex-col lg:order-last">
 				<h2 className="font-extrabold text-5xl ">
 					Mi{" "}
-					<span className="bg-gradient-to-t from-green-800 to-green-500 bg-clip-text text-transparent">
+					<span className="dark:text-green-500 text-green-700">
 						Experiencia y Formación
 					</span>{" "}
 					como desarrollador{" "}
@@ -29,7 +29,7 @@ const Experiences = () => {
 				<p className="text-xl mt-2 ">
 					Te relato un poco sobre mi experiencia y formación como desarrollador
 					web, con la que he podido{" "}
-					<span className="bg-gradient-to-t from-green-800 to-green-500 bg-clip-text text-transparent font-bold">
+					<span className="dark:text-green-500 text-green-700 font-bold">
 						mejorar mis habilidades y aprender nuevas tecnologías.
 					</span>
 				</p>
