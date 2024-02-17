@@ -9,7 +9,7 @@ const NavbarItem = (props: Props) => {
 			<a
 				href={props.href}
 				target={props.target === "_blank" ? "_blank" : ""}
-				className="bg-green-800 bg-opacity-0 hover:bg-opacity-70 duration-200 px-2 py-2 rounded-lg font-semibold text-center"
+				className="duration-200 px-2 py-2 rounded-lg font-semibold text-center hover:underline"
 			>
 				{props.text}
 			</a>
