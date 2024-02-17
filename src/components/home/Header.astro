@@ -21,10 +21,10 @@ import Badge from "@/components/ui/Badge";
 
 <header
 	class={`
-		lg:px-20 py-20 lg:py-0 px-5 justify-center items-center min-h-screen lg:gap-10 gap-0 lg:grid-cols-2 lg:grid min-w-[100vw] mx-auto flex flex-col-reverse bg-gradient-to-t dark:from-custom-dark dark:to-zinc-800 from-custom-light to-zinc-200
+		px-5 pb-20 pt-32 items-center mx-auto bg-gradient-to-t dark:from-custom-dark dark:to-zinc-800 from-custom-light to-zinc-200 
 	`}
 >
-	<div class="flex flex-col gap-5 min-w-full">
+	<div class="flex flex-col gap-5 max-w-7xl mx-auto">
 		<!-- <div>
 			<img
 				src="/mendoza.jpg"
@@ -40,11 +40,8 @@ import Badge from "@/components/ui/Badge";
 		<h1 class="text-5xl font-extrabold">
 			¡Hola! 👋
 			<br />
-			 Mi nombre es
-			<span
-				class="bg-gradient-to-t from-green-800 to-green-500 bg-clip-text text-transparent"
-				>Omar Mendoza.</span
-			>
+			Mi nombre es
+			<span class="dark:text-green-500 text-green-700">Omar Mendoza.</span>
 		</h1>
 		<p class="dark:opacity-90 opacity-90 max-w-3xl font-semibold text-xl">
 			+3 años de experiencia.
@@ -73,5 +70,5 @@ import Badge from "@/components/ui/Badge";
 		</div>
 	</div>
 
-	<HeaderSkills />
+	<!-- <HeaderSkills /> -->
 </header>
