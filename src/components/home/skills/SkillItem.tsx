@@ -20,7 +20,7 @@ const SkillItem = (props: Props) => {
 	return (
 		<>
 			<span
-				className={`dark:bg-zinc-800 px-3 py-3 rounded-xl bg-white inline items-center justify-center shadow-lg dark:hover:bg-zinc-800/50 duration-200 ${
+				className={`dark:bg-zinc-800 px-3 py-3 rounded-xl bg-white inline items-center justify-center shadow-lg dark:hover:bg-zinc-800/50 duration-200 animate-fade ${
 					props.category.includes(props.viewSkills) ||
 					props.viewSkills === "all"
 						? ""

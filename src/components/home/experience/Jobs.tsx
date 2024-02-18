@@ -3,7 +3,7 @@ import ExperienceItem from "./ExperienceItem.tsx";
 
 const Jobs = () => {
 	return (
-		<div className="border-l-4 border-zinc-800 min-h-[20rem]">
+		<div className="border-l-4 border-zinc-800 min-h-[20rem] animate-fade">
 			<div className="flex gap-5 items-center -ml-[0.65rem]">
 				<div className="h-4 w-4 bg-zinc-800 rounded-full"></div>
 				<h3 className="font-semibold text-2xl">Freelancer</h3>
