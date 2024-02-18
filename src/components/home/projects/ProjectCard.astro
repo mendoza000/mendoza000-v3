@@ -1,6 +1,7 @@
 ---
 import Button from "@/components/ui/Button";
 import { Image } from "astro:assets";
+import { ArrowUpRight, GithubIcon } from "lucide-react";
 
 interface Props {
 	img: any;
@@ -16,9 +17,33 @@ const props: Props = Astro.props;
 ---
 
 <div
-	class="px-5 py-7 rounded-xl bg-gradient-to-tr dark:from-custom-dark dark:to-zinc-800 from-custom-light to-zinc-200 flex flex-col gap-6 duration-200 shadow-xl"
+	class="px-5 py-5 rounded-xl bg-gradient-to-tr dark:from-custom-dark dark:to-zinc-800 from-custom-light to-zinc-200 flex flex-col gap-6 duration-200 shadow-xl"
 >
-	<h4 class="font-bold capitalize text-xl">{props.title}</h4>
+	<div class="flex justify-between">
+		<h4 class="font-bold capitalize text-xl">{props.title}</h4>
+
+		<div class="flex gap-1">
+			<a
+				class="p-1 rounded-lg border-2 border-transparent inline-flex duration-200 group hover:border-zinc-700"
+				href={props.github}
+				target="_blank"
+			>
+				<GithubIcon
+					className="group-hover:animate-wiggle-more group-hover:animate-twice group-hover:animate-duration-700 h-5 w-5 text-zinc-500"
+				/>
+			</a>
+
+			<a
+				class="p-1 rounded-lg border-2 border-transparent inline-flex duration-200 group hover:border-zinc-700"
+				href={props.link}
+				target="_blank"
+			>
+				<ArrowUpRight
+					className="group-hover:animate-wiggle-more group-hover:animate-twice group-hover:animate-duration-700 h-5 w-5 text-zinc-500"
+				/>
+			</a>
+		</div>
+	</div>
 	<div class="grid lg:grid-cols-2 gap-5">
 		<p class="dark:opacity-40 opacity-80">{props.description}</p>
 		<Image
@@ -39,12 +64,12 @@ const props: Props = Astro.props;
 		}
 	</div>
 
-	<div class="flex gap-5">
+	<!-- <div class="flex gap-5">
 		<Button variant="primary">
 			<a href={props.link} target="_blank">Ver proyecto</a>
 		</Button>
 		<Button variant="outline">
 			<a href={props.github} target="_blank">Ver codigo</a>
 		</Button>
-	</div>
+	</div> -->
 </div>
