@@ -55,7 +55,7 @@ const Experiences = () => {
 				</div>
 			</div>
 
-			<div className="px-10 py-10 rounded-2xl shadow-lg overflow-y-scroll max-h-[25rem] text-white bg-zinc-900">
+			<div className="px-10 py-10 rounded-2xl shadow-lg overflow-y-scroll max-h-[25rem] text-white bg-gradient-to-tr from-custom-dark to-zinc-800">
 				{viewJobs ? <Jobs /> : <Education />}
 			</div>
 		</div>

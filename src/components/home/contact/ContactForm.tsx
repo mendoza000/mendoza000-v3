@@ -26,9 +26,9 @@ const ContactForm = () => {
 	return (
 		<form
 			onSubmit={handleSubmit}
-			className="px-5 py-5 dark:bg-zinc-800 flex flex-col rounded-2xl shadow-xl bg-white gap-5"
+			className="px-5 py-5 bg-gradient-to-tr dark:from-custom-dark dark:to-zinc-800 flex flex-col rounded-2xl shadow-xl from-custom-light to-zinc-200 gap-5"
 		>
-			<label className="flex flex-col font-semibold text-xs rounded-xl px-3 py-2 dark:bg-zinc-900 bg-zinc-100">
+			<label className="flex flex-col font-semibold text-xs rounded-xl px-3 py-2 dark:bg-zinc-900 bg-zinc-100/30">
 				Nombres
 				<input
 					type="text"
@@ -40,7 +40,7 @@ const ContactForm = () => {
 				/>
 			</label>
 
-			<label className="flex flex-col font-semibold text-xs rounded-xl px-3 py-2 dark:bg-zinc-900 bg-zinc-100">
+			<label className="flex flex-col font-semibold text-xs rounded-xl px-3 py-2 dark:bg-zinc-900 bg-zinc-100/30">
 				Asunto
 				<input
 					type="text"
@@ -52,7 +52,7 @@ const ContactForm = () => {
 				/>
 			</label>
 
-			<label className="flex flex-col font-semibold text-xs rounded-xl px-3 py-2 dark:bg-zinc-900 bg-zinc-100">
+			<label className="flex flex-col font-semibold text-xs rounded-xl px-3 py-2 dark:bg-zinc-900 bg-zinc-100/30">
 				Mensaje
 				<textarea
 					name="message"

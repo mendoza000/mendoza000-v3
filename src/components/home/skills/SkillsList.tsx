@@ -115,7 +115,7 @@ const SkillsList = (props: Props) => {
 	}, [props.viewSkills]);
 
 	return (
-		<div className="rounded-2xl shadow-lg items-start  px-6 justify-center py-6 bg-zinc-900">
+		<div className="rounded-2xl shadow-lg items-start  px-6 justify-center py-6 bg-gradient-to-tr from-custom-dark to-zinc-800">
 			<div className="flex flex-wrap gap-4">
 				{selectSkills.map((skill) => (
 					<SkillItem
