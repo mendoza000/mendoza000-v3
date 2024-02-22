@@ -18,7 +18,7 @@ const Navbar = () => {
 
 	return (
 		<nav
-			className={`fixed top-0 min-w-full bg-zinc-800/50 py-2 backdrop-blur-xl z-10 ${
+			className={`fixed top-0 min-w-full dark:bg-zinc-800/50 bg-zinc-500/20 py-2 backdrop-blur-2xl z-10 ${
 				openMenu
 					? "min-h-screen bg-opacity-90 dark:bg-opacity-90 text-white"
 					: " min-h-0 bg-opacity-20 dark:bg-opacity-50"
@@ -47,7 +47,7 @@ const Navbar = () => {
 				</div>
 
 				<ul
-					className={` lg:rounded-xl lg:px-2 py-4 lg:py-2  gap-5  lg:flex text-white ${
+					className={` lg:rounded-xl lg:px-2 py-4 lg:py-2  gap-5  lg:flex dark:text-white text-zinc-900 ${
 						!openMenu ? "hidden" : "flex flex-col"
 					}`}
 				>
