@@ -1,12 +1,10 @@
-import ExperienceItem from "./ExperienceItem.tsx";
-
 const Education = () => {
 	return (
 		<div className=" border-zinc-800 min-h-[20rem] animate-fade">
 			<div className="flex gap-5 items-center">
-				<h3 className="font-semibold text-2xl">Formación académica</h3>
+				<h3 className="font-semibold text-2xl">Academic Background</h3>
 			</div>
-			<p className=" opacity-70">2020 - Actualidad</p>
+			<p className=" opacity-70">2020 - Present</p>
 
 			<p className=" mt-5">
 				I have pursued a Bachelor's degree in Computer Engineering from UPTAI
