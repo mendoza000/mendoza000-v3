@@ -1,30 +1,43 @@
 ---
-import Button from "@/components/ui/Button.tsx";
 import { IconBrandGithub } from "@tabler/icons-react";
-import { IconBrandWhatsapp } from "@tabler/icons-react";
-import { IconBrandInstagram } from "@tabler/icons-react";
 import { IconBrandTwitter } from "@tabler/icons-react";
+import ContactItem from "./contact-item.astro";
+import { IconBrandDiscord } from "@tabler/icons-react";
+import { IconBrandGmail } from "@tabler/icons-react";
 ---
 
 <div
-	class="flex-wrap gap-4 px-3 py-3 bg-zinc-800 rounded-2xl inline-flex max-w-md justify-between mt-5"
+	class="flex-wrap gap-4 px-3 py-3 bg-gradient-to-tr dark:from-custom-dark dark:to-zinc-800 from-custom-light to-zinc-200 shadow-xl rounded-2xl max-w-md justify-between mt-5 min-w-full grid grid-cols-1 md:grid-cols-2"
 >
-	<Button variant="secondary">
-		<a href="https://wa.me/+584163436789" target="_blank"
-			><IconBrandWhatsapp /></a
-		>
-	</Button>
-	<Button variant="secondary">
-		<a href="https://x.com/mendoza000x" target="_blank"><IconBrandTwitter /></a>
-	</Button>
-	<Button variant="secondary">
-		<a href="https://instagram.com/mendoza000x_" target="_blank"
-			><IconBrandInstagram /></a
-		>
-	</Button>
-	<Button variant="secondary">
-		<a href="https://github.com/mendoza000" target="_blank"
-			><IconBrandGithub /></a
-		>
-	</Button>
+	<ContactItem
+		href="https://x.com/mendoza000x"
+		title="Twitter | @mendoza000x"
+		text="Follow me and follow you on twitter/x"
+	>
+		<IconBrandTwitter className="h-12 w-12 text-green-500" />
+	</ContactItem>
+
+	<ContactItem
+		href="https://github.com/mendoza000"
+		title="Github | @mendoza000"
+		text="View my projects and contributions"
+	>
+		<IconBrandGithub className="h-12 w-12 text-green-500" />
+	</ContactItem>
+
+	<ContactItem
+		href="https://discordapp.com/users/mendoza000#2939"
+		title="Discord | @mendoza000"
+		text="Let's play or chat on discord"
+	>
+		<IconBrandDiscord className="h-12 w-12 text-green-500" />
+	</ContactItem>
+
+	<ContactItem
+		href="mailto:mendoza000.dev@gmail.com"
+		title="mendoza000.dev@gmail.com"
+		text="Send me an email "
+	>
+		<IconBrandGmail className="h-12 w-12 text-green-500" />
+	</ContactItem>
 </div>
