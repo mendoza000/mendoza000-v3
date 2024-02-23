@@ -40,7 +40,7 @@ const Experiences = () => {
 						action={() => handleChangeView(true)}
 					>
 						<>
-							<Flame className="" /> Experiencia
+							<Flame className="" /> Experience
 						</>
 					</Button>
 					<Button
@@ -49,7 +49,7 @@ const Experiences = () => {
 					>
 						<>
 							<Award />
-							Formación académica
+							Academic Background
 						</>
 					</Button>
 				</div>
