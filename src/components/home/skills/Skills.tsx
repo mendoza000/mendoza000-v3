@@ -28,19 +28,15 @@ const Skills = () => {
 		>
 			<div className="flex flex-col">
 				<h2 className="font-extrabold text-5xl">
-					Mis{" "}
-					<span className="dark:text-green-500 text-green-700">
-						Habilidades{" "}
-					</span>
-					como desarrollador{" "}
-					<Dumbbell className="inline h-12 w-12 text-green-600" />
+					My <span className="dark:text-green-500 text-green-700">Skills </span>
+					as developer <Dumbbell className="inline h-12 w-12 text-green-600" />
 				</h2>
 				<p className="text-xl mt-2">
-					Estas son las{" "}
+					These are the{" "}
 					<span className="dark:text-green-500 text-green-700 font-bold">
-						habilidades y tecnologias
+						skills and technologies
 					</span>{" "}
-					que domino y que me permiten crear aplicaciones web de alta calidad.
+					I master, allowing me to create high-quality web applications.
 				</p>
 
 				<div className="mt-10 flex gap-3 flex-wrap">
@@ -49,7 +45,7 @@ const Skills = () => {
 						action={() => handleChangeView("all")}
 					>
 						<>
-							<Component /> Todas
+							<Component /> All
 						</>
 					</Button>
 
@@ -85,7 +81,7 @@ const Skills = () => {
 						action={() => handleChangeView("language")}
 					>
 						<>
-							<Code /> Lenguajes
+							<Code /> Languages
 						</>
 					</Button>
 
@@ -94,14 +90,14 @@ const Skills = () => {
 						action={() => handleChangeView("other")}
 					>
 						<>
-							<Wand /> Otros
+							<Wand /> Others
 						</>
 					</Button>
 				</div>
 
-				<p className="mt-10 opacity-80 flex items-center gap-2 border-b-2 max-w-lg pb-1 border-b-zinc-900 dark:border-b-white border-opacity-50 dark:border-opacity-30">
+				<p className="mt-10 opacity-80 flex items-center gap-2 border-b-2 max-w-sm pb-1 border-b-zinc-900 dark:border-b-white border-opacity-50 dark:border-opacity-30">
 					<Info className="inline" />
-					Tip: puedes ubicar el mouse sobre cada skill para saber su nombre
+					Tip: You can hover over each skill to know its name.
 				</p>
 			</div>
 

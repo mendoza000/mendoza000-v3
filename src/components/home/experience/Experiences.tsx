@@ -18,19 +18,19 @@ const Experiences = () => {
 		>
 			<div className="flex flex-col lg:order-last">
 				<h2 className="font-extrabold text-5xl ">
-					Mi{" "}
+					My{" "}
 					<span className="dark:text-green-500 text-green-700">
-						Experiencia y Formación
+						Experience and Training
 					</span>{" "}
-					como desarrollador{" "}
+					as a Developer{" "}
 					<Sailboat className="inline h-12 w-12 text-green-600" />
 				</h2>
 
 				<p className="text-xl mt-2 ">
-					Te relato un poco sobre mi experiencia y formación como desarrollador
-					web, con la que he podido{" "}
+					I'll tell you a bit about my experience and training as a web
+					developer, through which I've been able to{" "}
 					<span className="dark:text-green-500 text-green-700 font-bold">
-						mejorar mis habilidades y aprender nuevas tecnologías.
+						enhance my skills and learn new technologies.
 					</span>
 				</p>
 

@@ -1,9 +1,6 @@
 ---
-import { ArrowDown, MessageCircle } from "lucide-astro";
+import { ArrowUpRightSquare, MessageCircle } from "lucide-astro";
 import Button from "@/components/ui/Button";
-import HeaderSkills from "./HeaderSkills.astro";
-import { IconBrandJavascript } from "@tabler/icons-react";
-import { IconBrandGolang } from "@tabler/icons-react";
 import Badge from "@/components/ui/Badge";
 ---
 
@@ -26,37 +23,36 @@ import Badge from "@/components/ui/Badge";
 >
 	<div class="flex flex-col gap-5 max-w-7xl mx-auto">
 		<div class="flex gap-2">
-			<Badge color="blue">🎉 Disponible para trabajar</Badge>
+			<Badge color="blue">🎉 Available to work</Badge>
 		</div>
 
-		<h1 class="text-5xl font-extrabold">
-			¡Hola! 👋
-			<br />
-			Mi nombre es
+		<h1 class="-mb-4 text-xl font-extrabold">
+			Hi! I'm
 			<span class="dark:text-green-500 text-green-700">Omar Mendoza.</span>
 		</h1>
-		<p class="dark:opacity-90 opacity-90 max-w-3xl font-semibold text-xl">
-			+3 años de experiencia.
+		<p class="dark:opacity-90 opacity-90 max-w-5xl font-semibold text-4xl">
+			+3 years of experience.
 			<span class="dark:text-yellow-200 text-yellow-600"
-				>Desarrollador web Frontend y Backend.</span
+				>Frontend and Backend web developer.</span
 			>
-			<span class="dark:text-red-200 text-red-500"> Venezolano.</span>
+			<span class="dark:text-red-200 text-red-500"> Venezuelan.</span>
 			<span class="dark:text-blue-200 text-blue-500">
-				Especializado en crear interfaces visuales hermosas y funcionales</span
-			> para una experiencia de usuario excepcional.
+				Specialized in creating beautiful and functional visual interfaces</span
+			> for an exceptional user experience.
 		</p>
 
-		<div class="flex gap-4">
+		<div class="grid grid-cols-2 max-w-sm gap-4">
 			<Button>
-				<a href="#contact" class="flex gap-2 hover:gap-3 duration-200"
-					><MessageCircle />Contáctame</a
+				<a href="#contact" class="flex gap-2 hover:gap-3 duration-200 mx-auto"
+					><MessageCircle />Let's talk</a
 				>
 			</Button>
 			<Button variant="outline">
 				<a
 					target="_blank"
 					href="https://docs.google.com/document/d/16ezw6j-XlfdU02b7Vvx4jvFV1wllAjG0_8TVizTQOgE/edit?usp=drive_link"
-					class="flex gap-2 hover:gap-3 duration-200"><ArrowDown />Abrir CV</a
+					class="flex gap-2 hover:gap-3 duration-200 mx-auto"
+					><ArrowUpRightSquare />Open CV</a
 				>
 			</Button>
 		</div>
