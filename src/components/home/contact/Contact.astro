@@ -10,26 +10,25 @@ import ContactForm from "./ContactForm.tsx";
 >
 	<div class="flex flex-col gap-2">
 		<h2 class="font-extrabold text-5xl max-w-2xl">
-			<span class="dark:text-green-500 text-green-700"> Contactame</span>
-
+			<span class="dark:text-green-500 text-green-700">Let's talk</span>
+			{" "}
 			<MessageCircle class="inline h-12 w-12 text-green-600" />
 		</h2>
 
 		<p class="text-xl">
-			Mi misión es ayudarte a <span
+			My mission is to help you<span
 				class="dark:text-green-500 text-green-700 font-bold"
-				>convertir tus ideas en realidad</span
-			>. Ya sea que desees discutir un proyecto, hacer una consulta o
-			simplemente decir hola, estoy aquí para responder a tus preguntas y
-			trabajar juntos en tus objetivos. Ponte en contacto y comencemos a crear
-			algo asombroso juntos.
+			>
+				turn your ideas into reality.</span
+			> Whether you want to discuss a project, make an inquiry, or just say hello,
+			I'm here to answer your questions and work together on your goals. Get in touch,
+			and let's start creating something amazing together.
 		</p>
-
-		<ContactsBar />
 	</div>
 
 	<div class="flex flex-col gap-5">
+		<ContactsBar />
 		<!-- <h4 class="font-bold text-xl">Tambien puedes enviarme un correo!</h4> -->
-		<ContactForm client:load />
+		<!-- <ContactForm client:load /> -->
 	</div>
 </div>
