@@ -51,10 +51,10 @@ const Navbar = () => {
 						!openMenu ? "hidden" : "flex flex-col"
 					}`}
 				>
-					<NavbarItem href="#" text="Inicio" />
-					<NavbarItem href="#experiences" text="Experiencia" />
-					<NavbarItem href="#projects" text="Proyectos" />
-					<NavbarItem href="#contact" text="Contacto" />
+					<NavbarItem href="#" text="Home" />
+					<NavbarItem href="#experiences" text="Experience" />
+					<NavbarItem href="#projects" text="Projects" />
+					<NavbarItem href="#contact" text="Contact" />
 					<NavbarItem
 						href="https://devstopia.vercel.app"
 						target="_blank"
