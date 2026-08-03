@@ -48,12 +48,14 @@ const props: Props = Astro.props;
 	</div>
 	<div class="grid lg:grid-cols-2 gap-5">
 		<p class="dark:opacity-40 opacity-80">{props.description}</p>
-		<Image
-			src={props.img}
-			alt="project-screen"
-			class={"rounded-lg"}
-			draggable="false"
-		/>
+		<div class="aspect-[4/3] rounded-lg overflow-hidden">
+			<Image
+				src={props.img}
+				alt="project-screen"
+				class={"h-full w-full object-cover"}
+				draggable="false"
+			/>
+		</div>
 	</div>
 
 	<div class="flex gap-2 flex-wrap">
