@@ -1,12 +1,31 @@
 ---
 import ProjectCard from "./ProjectCard.astro";
+import aliaImg from "@/assets/projects/alia.png";
+import houseStreamingImg from "@/assets/projects/house-streaming.png";
 import nivalImg from "@/assets/projects/nival.png";
 import uLPImg from "@/assets/projects/your-app-landing.png";
-import devstopiaImg from "@/assets/projects/devstopia-m.png";
-import xoImg from "@/assets/projects/xo-m.png";
 ---
 
 <div class={"grid lg:grid-cols-2 gap-10"}>
+	<ProjectCard
+		title="ALIA"
+		description="ALIA is an online platform I designed and developed that connects users with verified psychologists for emotional support sessions. It handles secure booking, authentication and payments end-to-end, with a strong focus on privacy and a smooth user experience."
+		link="https://www.aliabienestar.com/"
+		img={aliaImg}
+		tags={["Next.js", "TailwindCSS", "Typescript", "Prisma", "Stripe", "shadcn/ui"]}
+		alt="alia-screen"
+	/>
+
+	<ProjectCard
+		title="House Streaming"
+		description="House Streaming is an e-commerce catalog I designed and developed for buying streaming accounts (Netflix, Disney+, HBO Max, Spotify and more) with automatic delivery and secure checkout via PayPal, Binance Pay or Pago Móvil."
+		link="https://house-streaming.vercel.app/"
+		github="https://github.com/mendoza000/house-streaming-catalog/"
+		img={houseStreamingImg}
+		tags={["Next.js", "TailwindCSS", "Typescript", "Supabase", "PayPal", "shadcn/ui"]}
+		alt="house-streaming-screen"
+	/>
+
 	<ProjectCard
 		title="Nival Digital"
 		description="I designed and developed a landing page for a company that offers various services, from programming to data science. Every detail, from the color palette to the layout of the elements, aligns with the client's vision."
@@ -24,26 +43,6 @@ import xoImg from "@/assets/projects/xo-m.png";
 		github="https://github.com/mendoza000/your-app-landing"
 		img={uLPImg}
 		tags={["Vue.js", "TailwindCSS", "Typescript", "Vite"]}
-		alt="nival-screen"
-	/>
-
-	<ProjectCard
-		title="Devstopia"
-		description="Devstopia is my online space where I chronicle my journey as a developer and share tutorials for amazing projects. This blog, built with JAMStack, is the convergence of development and creativity, designed to inspire your own path in programming."
-		link="https://devstopia.vercel.app/"
-		github="https://github.com/mendoza000/devstopia"
-		img={devstopiaImg}
-		tags={["Next.js", "TailwindCSS", "Typescript", "MDX"]}
-		alt="nival-screen"
-	/>
-
-	<ProjectCard
-		title="XO"
-		description="XO is a web-based tic-tac-toe game I designed using Sass and Vanilla JavaScript. It's one of my initial projects where I also implemented games against the CPU, albeit in a basic manner. The CPU marked available positions on the board randomly, offering little difficulty."
-		link="https://xo000.vercel.app/"
-		github="https://github.com/mendoza000/xo"
-		img={xoImg}
-		tags={["Vite", "React", "Sass", "Javascript", "Redux", "Animate.css"]}
 		alt="nival-screen"
 	/>
 </div>
