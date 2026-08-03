@@ -1,4 +1,6 @@
 ---
+import "@/styles/global.css";
+import SpeedInsights from "@vercel/speed-insights/astro";
 import "@fontsource/barlow/200.css";
 import "@fontsource/barlow/300.css";
 import "@fontsource/barlow/400.css";
@@ -26,6 +28,7 @@ const { title } = Astro.props;
 		class="dark:bg-custom-dark bg-custom-light text-custom-dark dark:text-custom-light animate-fade"
 	>
 		<slot />
+		<SpeedInsights />
 	</body>
 </html>
 
