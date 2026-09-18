@@ -13,7 +13,11 @@ import {
 	IconBrandMysql,
 	IconBrandVue,
 	IconBrandSupabase,
+	IconBrandTailwind,
+	IconBrandFigma,
+	IconTerminal2,
 } from "@tabler/icons-react";
+import { SiNestjs, SiN8N, SiLaravel, SiStripe, SiClaude } from "react-icons/si";
 import { useAutoAnimate } from "@formkit/auto-animate/react";
 import SkillItem from "./SkillItem";
 import type { ViewSkills } from "@/types";
@@ -97,6 +101,46 @@ const SkillsList = (props: Props) => {
 			name: "supabase",
 			category: ["database", "backend"],
 			icon: <IconBrandSupabase className={iconClass} />,
+		},
+		{
+			name: "tailwindcss",
+			category: ["frontend"],
+			icon: <IconBrandTailwind className={iconClass} />,
+		},
+		{
+			name: "figma",
+			category: ["other"],
+			icon: <IconBrandFigma className={iconClass} />,
+		},
+		{
+			name: "laravel",
+			category: ["backend"],
+			icon: <SiLaravel className={iconClass} />,
+		},
+		{
+			name: "nestjs",
+			category: ["backend"],
+			icon: <SiNestjs className={iconClass} />,
+		},
+		{
+			name: "stripe",
+			category: ["backend", "other"],
+			icon: <SiStripe className={iconClass} />,
+		},
+		{
+			name: "n8n",
+			category: ["other"],
+			icon: <SiN8N className={iconClass} />,
+		},
+		{
+			name: "claude",
+			category: ["other"],
+			icon: <SiClaude className={iconClass} />,
+		},
+		{
+			name: "codex",
+			category: ["other"],
+			icon: <IconTerminal2 className={iconClass} />,
 		},
 	];
 
