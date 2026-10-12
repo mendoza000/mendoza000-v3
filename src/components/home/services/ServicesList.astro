@@ -1,57 +1,24 @@
 ---
-import {
-	Cable,
-	Figma,
-	ShoppingCart,
-	TabletSmartphone,
-	Text,
-	Wrench,
-} from "lucide-react";
-import ServicesListItem from "./ServicesListItem.tsx";
-
-const iconClass = "h-7 w-7 inline";
+import ServiceIllustration from "./ServiceIllustration.astro";
+import { portfolio, type Locale } from "@/content/portfolio";
+const { locale } = Astro.props as { locale: Locale };
+const copy = portfolio[locale];
+const figures = ["exploded", "patch", "slow", "gateway", "terminal", "maintenance"] as const;
+const fallbacks = ["/hairline/web-app-rest.svg", "/hairline/integrations-rest.svg", "/hairline/automation-rest.svg", "/hairline/bookings-payments-rest.svg", "/hairline/dashboard-rest.svg", "/hairline/maintenance-rest.svg"];
 ---
-
-<div class="grid lg:grid-cols-3 justify-center items-center gap-10">
-	<ServicesListItem
-		title="Landing pages"
-		desciption="Boost your online presence with a captivating landing page. We create a first impression that will leave your visitors intrigued and eager to explore more. Your story begins here."
-	>
-		<Text className={iconClass} />
-	</ServicesListItem>
-
-	<ServicesListItem
-		title="E-commerce"
-		desciption="Transform your business vision into a high-performance online store. Our expertise provides you with a reliable and attractive platform to reach your customers and expand your horizons."
-	>
-		<ShoppingCart className={iconClass} />
-	</ServicesListItem>
-
-	<ServicesListItem
-		title="Web desing"
-		desciption="Web design is my passion. We create websites that are not only functional but also visually stunning. Every detail is carefully crafted to reflect the essence of your brand."
-	>
-		<Figma className={iconClass} />
-	</ServicesListItem>
-
-	<ServicesListItem
-		title="Mobile first"
-		desciption="The world moves through mobile devices, and we put your business at the center. We design unique web experiences that work exceptionally well on smartphones."
-	>
-		<TabletSmartphone className={iconClass} />
-	</ServicesListItem>
-
-	<ServicesListItem
-		title="Website maintenance"
-		desciption="Your website deserves constant attention. I will ensure that your online presence is always up-to-date, secure, and free of technical issues, so you can focus on your business."
-	>
-		<Wrench className={iconClass} />
-	</ServicesListItem>
-
-	<ServicesListItem
-		title="API Creation"
-		desciption="We build digital bridges that connect applications and data. Our APIs are designed to be efficient, secure, and scalable, facilitating communication and innovation in your business."
-	>
-		<Cable className={iconClass} />
-	</ServicesListItem>
+<div class="services-grid">
+  {copy.serviceTitles.map((title, index) => <ServiceIllustration
+    figure={figures[index]}
+    title={title}
+    description={copy.serviceDescriptions[index]}
+    label={copy.serviceIllustrationLabels[index]}
+    fallbackAsset={fallbacks[index]}
+    contactCta={copy.serviceContactCta}
+    evidence={copy.serviceEvidence[index]}
+  />)}
 </div>
+<style>
+  .services-grid { display:grid; grid-template-columns:minmax(0,1fr); align-items:stretch; gap:1.25rem; }
+  @media (min-width:768px) { .services-grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:1.5rem; } }
+  @media (min-width:1100px) { .services-grid { grid-template-columns:repeat(3,minmax(0,1fr)); } }
+</style>

@@ -11,18 +11,25 @@ import "@fontsource/barlow/800.css";
 
 interface Props {
 	title: string;
+	description: string;
+	locale: "es" | "en";
 }
 
-const { title } = Astro.props;
+const { title, description, locale } = Astro.props;
+const alternate = locale === "es" ? "en" : "es";
 ---
 
-<html lang="es">
+<html lang={locale}>
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+		<meta name="description" content={description} />
+		<link rel="alternate" hreflang="es" href="/es/" />
+		<link rel="alternate" hreflang="en" href="/en/" />
+		<link rel="alternate" hreflang="x-default" href="/es/" />
 	</head>
 	<body
 		class="dark:bg-custom-dark bg-custom-light text-custom-dark dark:text-custom-light animate-fade"

@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-12T14:41:58Z",
+  "title": "Design System: Mendoza000 Portfolio",
+  "extensions": {
+    "motion": [
+      {
+        "name": "process-connector-draw",
+        "value": "280ms cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "One-shot process connector drawing after the section enters view; disabled for reduced motion."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "mobile-nav-max",
+        "value": "40rem"
+      },
+      {
+        "name": "process-tablet-min",
+        "value": "48rem"
+      },
+      {
+        "name": "process-desktop-min",
+        "value": "70rem"
+      },
+      {
+        "name": "services-two-column-min",
+        "value": "768px"
+      },
+      {
+        "name": "services-three-column-min",
+        "value": "1100px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Action",
+      "kind": "button",
+      "refersTo": "action-primary",
+      "description": "Filled portfolio action; the existing CTA is an anchor styled as an action.",
+      "html": "<a class=\"ds-action-primary\" href=\"#contact\">Contact</a>",
+      "css": ".ds-action-primary { display: inline-flex; align-items: center; justify-content: center; gap: 0.55rem; min-height: 3rem; padding: 0.7rem 1rem; border: 1px solid var(--portfolio-primary, #15803d); border-radius: 0.55rem; background: var(--portfolio-primary, #15803d); color: #fff; font: 600 1rem Barlow, sans-serif; text-decoration: none; transition: background-color 150ms ease, color 150ms ease; } .ds-action-primary:hover { background: var(--portfolio-primary-dark, #166534); }"
+    },
+    {
+      "name": "Secondary Action",
+      "kind": "button",
+      "description": "Outlined, transparent portfolio action with green text; the existing CTA is an anchor styled as an action.",
+      "html": "<a class=\"ds-action-secondary\" href=\"#projects\">Explore projects</a>",
+      "css": ".ds-action-secondary { display: inline-flex; align-items: center; justify-content: center; gap: 0.55rem; min-height: 3rem; padding: 0.7rem 1rem; border: 1px solid var(--portfolio-primary, #15803d); border-radius: 0.55rem; background: transparent; color: var(--portfolio-secondary-text, #166534); font: 600 1rem Barlow, sans-serif; text-decoration: none; transition: background-color 150ms ease, color 150ms ease; } .ds-action-secondary:hover { background: rgb(34 197 94 / 12%); }"
+    },
+    {
+      "name": "Navigation",
+      "kind": "nav",
+      "description": "Sticky neutral navigation with underlined green hover and explicit keyboard focus treatment.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"Main navigation\"><a class=\"ds-nav-brand\" href=\"#top\">MENDOZA000</a><a href=\"#services\">Services</a></nav>",
+      "css": ".ds-nav { position: sticky; top: 0; display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 0.85rem 1.25rem; border-bottom: 1px solid var(--portfolio-border, #d4d4d4); background: var(--portfolio-surface, #f5f5f4); color: var(--portfolio-text, #27272a); font: 600 1rem Barlow, sans-serif; } .ds-nav a { display: inline-flex; align-items: center; min-height: 2.75rem; padding-inline: 0.65rem; color: inherit; text-underline-offset: 0.25em; } .ds-nav-brand { letter-spacing: 0.04em; text-decoration: none; } .ds-nav a:hover { color: var(--portfolio-primary, #15803d); text-decoration: underline; } .ds-nav a:focus-visible { outline: 3px solid var(--portfolio-primary, #15803d); outline-offset: 2px; }"
+    },
+    {
+      "name": "Technology Tag",
+      "kind": "chip",
+      "description": "Compact neutral outlined label used for technology tags; it is informational, not an interactive control.",
+      "html": "<span class=\"ds-chip\">Astro</span>",
+      "css": ".ds-chip { display: inline-block; padding: 0.25rem 0.5rem; border: 1px solid var(--portfolio-border, #d4d4d4); border-radius: 0.35rem; color: var(--portfolio-muted, #52525b); font: 400 0.82rem Barlow, sans-serif; }"
+    },
+    {
+      "name": "Process Card",
+      "kind": "card",
+      "refersTo": "process-card",
+      "description": "Numbered step card from the ordered Process sequence; no hover or focus styling is authored.",
+      "html": "<article class=\"ds-process-card\"><span class=\"ds-process-number\" aria-hidden=\"true\">01</span><h3>Understand</h3><p>Clarify the goal and constraints.</p></article>",
+      "css": ".ds-process-card { position: relative; min-width: 0; padding: 1.25rem; border: 1px solid var(--portfolio-border, #d4d4d4); border-radius: 0.55rem; background: var(--portfolio-surface, #f5f5f4); color: var(--portfolio-text, #27272a); font-family: Barlow, sans-serif; } .ds-process-number { display: block; color: var(--portfolio-primary, #15803d); font-size: clamp(1.5rem, 2.5vw, 2rem); line-height: 1; font-weight: 750; letter-spacing: -0.04em; font-variant-numeric: tabular-nums; } .ds-process-card h3 { max-width: 15ch; margin: 0.85rem 0 0; font-size: clamp(1.05rem, 1.35vw, 1.25rem); line-height: 1.2; font-weight: 650; } .ds-process-card p { margin: 0.55rem 0 0; color: var(--portfolio-muted, #52525b); line-height: 1.5; }"
+    }
+  ],
+  "narrative": {
+    "overview": "The implemented identity is Services-led: shared typography, spacing, borders, adaptive neutrals, and green accents extend the Services section's visual language across the bilingual portfolio. Services illustrations remain specific to Services; they are not a general-purpose decoration system. The interface is implemented in Spanish and English, with light and dark themes.\n\nThis is a snapshot of observed code, not a proposal for future work. Five peer section headings—Services, Projects, Experience, Process, and Contact—use one decorative Phosphor Regular icon from the existing `react-icons/pi` package through the shared typed `PortfolioIcon` component. They are ordered icon-left, before the title: tools, folder, briefcase, list-checks, and chat. The SVGs are inline in the server-rendered output, sized 1em square, nonshrinking (`flex: 0 0 auto`), and aligned to the first text line; the shared icon color is `#15803d` in light mode and `#4ade80` in dark mode. Existing heading gap styling is retained, and icons are decorative (`aria-hidden`, not icon-only hydration). Official technology logos and unused legacy icon families remain intentional exceptions; Hairline artwork is unchanged, and its Service CTA arrow uses Phosphor. Shared section spacing is a total inter-section gap of `clamp(3rem, 6vw, 6rem)`, split evenly as half-padding on each adjoining section; separate header-to-content spacing remains 1.75rem. This supersedes the earlier per-section padding-only interpretation. At 390/820/1440 CSS pixels, measured heading sizes are 32/32.8/48px, and outer gutters are 20/20/80px. Measured text contrast is 13.63:1 in light mode and 16.31:1 in dark mode. Final spacing measurements: independent report `mv5f88q5-z-ot1h`, 12 ES/EN × light/dark cases at 390/820/1440 CSS pixels plus 1920px ES dark. Services→Projects / Skills→Experience / Experience visible text→Process / lowest Process card→Contact gaps measured 48/49/51.6/49px at 390, 49.2/50.2/52/50.2px at 820, 86.4/87.4/89.2/87.4px at 1440, and 96/97/98.8/97px at 1920. Border/leading effects account for differences of at most 4px. Projects has a bilingual intro with 28px from heading to intro and 28px from intro to cards. Contact is top-aligned, not vertically centered. Earlier 56/57.4/96px per-section padding figures are historical and superseded.",
+    "keyCharacteristics": [
+      "Services-led shared visual grammar; Services-specific illustrations.",
+      "Barlow typography, restrained borders and adaptive neutral surfaces.",
+      "Green interaction accents; Spanish/English and light/dark support."
+    ],
+    "rules": [],
+    "dos": [
+      "preserve the shared Barlow, spacing, border, adaptive-neutral, and green language when extending the implemented portfolio",
+      "keep Spanish/English content and light/dark theme behavior in view",
+      "retain the Process sequence's DOM order and responsive visual topology",
+      "keep Hairline illustrations within the Services visual context"
+    ],
+    "donts": [
+      "describe mobile Process connectors as universally bridging card gaps; their SVGs live inside the preceding card",
+      "describe the five Phosphor Regular peer-heading icons as pending migration; official technology logos and unused legacy icon families are intentional exceptions",
+      "treat Contact-body peer-envelope work as implemented in this snapshot",
+      "claim unverified browser or accessibility coverage as part of this design snapshot"
+    ]
+  }
+}

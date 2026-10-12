@@ -1,0 +1,42 @@
+---
+import { portfolio, type Locale } from "@/content/portfolio";
+const { locale } = Astro.props as { locale: Locale };
+const copy = portfolio[locale];
+const nav = locale === "es" ? ["Inicio", "Servicios", "Proyectos", "Experiencia", "Contacto"] : ["Home", "Services", "Projects", "Experience", "Contact"];
+---
+<nav aria-label={locale === "es" ? "Navegación principal" : "Main navigation"} class="portfolio-nav sticky flex-wrap">
+  <div class="portfolio-wrap portfolio-nav-inner">
+    <a href={locale === "es" ? "/es/" : "/en/"} class="portfolio-wordmark" aria-label={copy.nav[0]}>MENDOZA000</a>
+    <ul class="portfolio-nav-links">
+      <li><a href="#top">{nav[0]}</a></li>
+      <li><a href="#services">{nav[1]}</a></li>
+      <li><a href="#projects">{nav[2]}</a></li>
+      <li><a href="#experiences">{nav[3]}</a></li>
+      <li><a href="#contact">{nav[4]}</a></li>
+      <li><a class="px-2 py-2 rounded-lg font-semibold hover:underline" href="https://devstopia.vercel.app" target="_blank" rel="noreferrer">{copy.blog}</a></li>
+      <li><a lang={locale === "es" ? "en" : "es"} hreflang={locale === "es" ? "en" : "es"} class="px-2 py-2 rounded-lg font-bold underline" href={locale === "es" ? "/en/" : "/es/"}>{locale === "es" ? "English" : "Español"}</a></li>
+      <li><button type="button" lang={locale} class="portfolio-theme-toggle" data-theme-toggle data-theme-label-light={locale === "es" ? "Cambiar al tema claro" : "Switch to light theme"} data-theme-label-dark={locale === "es" ? "Cambiar al tema oscuro" : "Switch to dark theme"} aria-label={locale === "es" ? "Cambiar tema" : "Toggle color theme"} aria-pressed="false"></button></li>
+    </ul>
+  </div>
+</nav>
+<script>
+  const syncThemeButton = (button: HTMLButtonElement) => {
+    const dark = document.documentElement.classList.contains("dark");
+    button.setAttribute("aria-pressed", String(dark));
+    button.setAttribute("aria-label", dark ? button.dataset.themeLabelLight! : button.dataset.themeLabelDark!);
+    button.textContent = dark ? (button.lang === "es" ? "Claro" : "Light") : (button.lang === "es" ? "Oscuro" : "Dark");
+  };
+  const initializeThemeButtons = () => {
+    document.querySelectorAll<HTMLButtonElement>("[data-theme-toggle]").forEach((button) => {
+      syncThemeButton(button);
+      button.onclick = () => {
+        const dark = !document.documentElement.classList.contains("dark");
+        document.documentElement.classList.toggle("dark", dark);
+        try { window.localStorage.setItem("theme", dark ? "dark" : "light"); } catch { /* Theme still works when storage is unavailable. */ }
+        syncThemeButton(button);
+      };
+    });
+  };
+  document.addEventListener("astro:page-load", initializeThemeButtons);
+  initializeThemeButtons();
+</script>

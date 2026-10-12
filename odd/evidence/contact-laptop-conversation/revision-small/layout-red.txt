@@ -1,0 +1,4 @@
+Functional layout RED (cached Playwright CLI against User4321's running desktop at http://localhost:4321/, viewport 1440x1100; observed before source edits).
+Assertions: mounted SVG [data-part=screen-frame] bbox converted to CSS pixels must be >=80% of left intro-column width; visible paragraph bottom to mounted frame top must be <=64px.
+Observed: intro width 697.671875px; stage width 400px; SVG frame bbox x=57.4000,y=90.2000,width=285.2000,height=139.6000 in 400x320 viewBox; actual frame width=285.2000px (40.8788% intro, expected >=80%: FAIL); paragraph bottom=4975.5625px, frame top=5105.7625px, gap=130.2000px (expected <=64px: FAIL).
+Both failures are rendered functional geometry measurements, not source-marker assertions. Source state was unchanged during measurement.

@@ -1,0 +1,8 @@
+Functional message-anchor GREEN, after changing only the authored bubble positions/roles and regenerating the actual mounted rest SVG. `node scripts/check-contact-conversation-layout.mjs` passed its bbox-based assertion against `odd/evidence/contact-laptop-conversation/rest.svg`.
+Browser-mounted SVG `getBBox()` results in native 400×320 coordinates:
+1 message-1-out: x=166..376 (right)
+2 message-2-in: x=23..249 (left)
+3 message-3-out: x=134..376 (right)
+4 message-4-in: x=23..270 (left)
+5 message-5-reply: x=84..376 (right; green)
+Visual order is R/L/R/L/R. All rows and composer remain within the fixed screen; browser screenshots recaptured in EN/ES, light/dark desktop/mobile.

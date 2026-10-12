@@ -1,0 +1,24 @@
+import { readFile, writeFile } from 'node:fs/promises';
+import { createHash } from 'node:crypto';
+
+const kernelSource = new URL('../.agents/skills/hairline-create/kernel.js', import.meta.url);
+const figureSource = new URL('../envelope.js', import.meta.url);
+const kernelOut = new URL('../public/hairline/contact-envelope-kernel.mjs', import.meta.url);
+const figureOut = new URL('../public/hairline/contact-envelope-figure.mjs', import.meta.url);
+const restSource = new URL('../odd/evidence/contact-envelope/rest-stage-export.svg', import.meta.url);
+const restOut = new URL('../public/hairline/contact-envelope-rest.svg', import.meta.url);
+const kernel = await readFile(kernelSource, 'utf8');
+const figure = await readFile(figureSource, 'utf8');
+const rest = await readFile(restSource, 'utf8');
+const digest = value => createHash('sha256').update(value).digest('hex');
+const emittedKernel = `${kernel}\nexport default HL;\n`;
+const emittedFigure = `import HL from './contact-envelope-kernel.mjs';\nlet definition;\nconst hairline = value => { definition = value; };\n${figure}\nexport const envelope = definition;\n`;
+if (!emittedKernel.startsWith(kernel) || !emittedFigure.includes(figure)) throw new Error('Mechanical source inclusion failed');
+const svgOpen = '<svg viewBox="0 0 400 320" aria-hidden="true">';
+if (!rest.startsWith(svgOpen) || !rest.trimEnd().endsWith('</svg>') || !rest.includes('<path class="sil"')) throw new Error('Browser-exported rest stage SVG is missing or malformed');
+const styles = `<style>path{fill:#f5f5f4;stroke:#15803d;stroke-width:1.2;stroke-linejoin:round;stroke-linecap:round;vector-effect:non-scaling-stroke}.nf{fill:none}.lo{stroke:#9bc4a4}.hi{stroke:#15803d}@media(prefers-color-scheme:dark){path{fill:#18181b;stroke:#4ade80}.lo{stroke:#426b4f}.hi{stroke:#4ade80}}</style>`;
+const staticSvg = rest.replace(svgOpen, '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 320" aria-hidden="true" focusable="false">' + styles);
+await writeFile(kernelOut, emittedKernel);
+await writeFile(figureOut, emittedFigure);
+await writeFile(restOut, staticSvg);
+console.log(`kernel sha256:${digest(kernel)}; figure sha256:${digest(figure)}; exported-rest sha256:${digest(rest)}`);

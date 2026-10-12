@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" fill="none" role="img" aria-labelledby="title">
+  <title id="title">Operational terminal and report</title>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <path d="m118 192 250-110 157 68-250 112-157-70Z" fill="#18181b" stroke="#4ade80" stroke-width="4"/>
+    <path d="m118 192 157 70v138l-157-70V192Zm407-42L275 262v138l250-112V150Z" fill="#18181b" stroke="#a1a1aa" stroke-width="3"/>
+    <path d="m143 192 224-98 126 55-224 100-126-57Z" fill="#18181b" stroke="#52525b" stroke-width="2"/>
+    <path d="m167 187 54-24m-36 34 38-17m-19 25 53-23" stroke="#4ade80" stroke-width="3"/>
+    <path d="m277 141 68-30 72 31-68 30-72-31Z" fill="#18181b" stroke="#a1a1aa" stroke-width="2"/>
+    <path d="m295 142 39-17m-26 25 39-17" stroke="#4ade80" stroke-width="3"/>
+    <path d="m221 194 68-30 87 38-68 31-87-39Z" fill="#18181b" stroke="#52525b" stroke-width="2"/>
+    <path d="m236 194 15-7 17 8-15 7-17-8Zm25 12 17-8 17 8-17 8-17-8Zm24 11 17-8 17 8-17 8-17-8Z" fill="#4ade80" stroke="none"/>
+    <path d="m368 207 69-30m-50 39 58-25m-38 37 54-24" stroke="#a1a1aa" stroke-width="3"/>
+    <path d="m184 239 68 30m-55-18 76 33m-47-43 76 33m-48-43 75 33m-48-43 76 33" stroke="#52525b" stroke-width="3"/>
+    <path d="m312 251 58-26m-39 37 71-31m-50 42 54-24m-32 34 68-30" stroke="#4ade80" stroke-width="3"/>
+    <path d="m435 254 19-8 21 9-19 9-21-10Z" fill="#18181b" stroke="#a1a1aa" stroke-width="2"/>
+    <path d="m435 254 21 10v49l-21-10v-49Zm40 1-19 9v49l19-8v-50Z" fill="#18181b" stroke="#52525b" stroke-width="2"/>
+    <path d="m448 267 8-4m-8 13 8-4m-8 13 8-4" stroke="#4ade80" stroke-width="2"/>
+    <path d="m139 348 132 60m252-112-127 58" stroke="#27272a" stroke-width="2"/>
+  </g>
+</svg>

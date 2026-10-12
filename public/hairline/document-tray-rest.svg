@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 260" role="img" aria-label="Isometric document tray with a raised sheet">
+  <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+    <path stroke-width="3" d="M75 144 184 83q8-5 16 0l111 63q8 5 0 10l-110 63q-8 5-16 0L75 154q-8-5 0-10Z"/>
+    <path stroke-width="2" d="m91 145 99-55q7-4 14 0l91 52m-204 9 99 56q7 4 14 0l99-56"/>
+    <path stroke-width="3" d="m126 127 73-41q5-3 10 0l80 45-76 43q-5 3-10 0Z"/>
+    <path stroke-width="2" d="m142 121 66-37 65 37m-113 9 67 38 63-36"/>
+    <path stroke-width="3" d="m151 111 72-41q5-3 10 0l69 39-77 43q-5 3-10 0Z"/>
+    <path stroke-width="2" d="m164 105 63-36 56 32m-107 12 60 34 65-36"/>
+  </g>
+</svg>

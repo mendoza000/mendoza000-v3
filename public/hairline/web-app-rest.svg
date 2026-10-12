@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" fill="none" role="img" aria-labelledby="title">
+  <title id="title">Layered application window</title>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <path d="m151 351 186-82 150 62-185 84-151-64Z" fill="#18181b" stroke="#52525b" stroke-width="3"/>
+    <path d="m151 351 151 64v30l-151-64v-30Zm336-20-185 84v30l185-84v-30Z" fill="#18181b" stroke="#52525b" stroke-width="3"/>
+    <path d="m182 324 155-68 118 49-154 70-119-51Z" fill="#18181b" stroke="#a1a1aa" stroke-width="3"/>
+    <path d="m182 324 119 51v24l-119-51v-24Zm273-19-154 70v24l154-70v-24Z" fill="#18181b" stroke="#a1a1aa" stroke-width="3"/>
+    <path d="m211 296 126-56 91 38-126 57-91-39Z" fill="#18181b" stroke="#4ade80" stroke-width="3"/>
+    <path d="m211 296 91 39v18l-91-39v-18Zm217-18-126 57v18l126-57v-18Z" fill="#18181b" stroke="#4ade80" stroke-width="3"/>
+    <path d="m117 183 220-98 190 81-220 99-190-82Z" fill="#18181b" stroke="#4ade80" stroke-width="4"/>
+    <path d="m117 183 190 82v34l-190-82v-34Zm410-17-220 99v34l220-99v-34Z" fill="#18181b" stroke="#a1a1aa" stroke-width="3"/>
+    <path d="m145 183 191-85 160 68-191 86-160-69Z" fill="#18181b" stroke="#52525b" stroke-width="2"/>
+    <path d="m145 183 160 69v18l-160-69v-18Zm351-17-191 86v18l191-86v-18Z" fill="#18181b" stroke="#52525b" stroke-width="2"/>
+    <path d="m178 168 158-70 121 52-157 71-122-53Z" stroke="#a1a1aa" stroke-width="2"/>
+    <path d="m203 160 78-35m-62 48 44-20m-26 35 106-48" stroke="#4ade80" stroke-width="5"/>
+    <circle cx="189" cy="165" r="5" fill="#4ade80" stroke="none"/>
+    <path d="m224 214 49 21m-34-35 70 30m-39-48 68 29m-38-47 40 17" stroke="#52525b" stroke-width="3"/>
+    <path d="m322 219 68-30m-46 41 54-24" stroke="#a1a1aa" stroke-width="3"/>
+    <path d="m236 279 88-39m-75 56 64-28m-34 43 72-32" stroke="#4ade80" stroke-width="3"/>
+    <path d="m209 342 83-37m-66 53 91-40m-57 58 106-47" stroke="#52525b" stroke-width="3"/>
+    <path d="m177 382 129 55m199-78-150 68" stroke="#27272a" stroke-width="2"/>
+  </g>
+</svg>

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" fill="none" role="img" aria-labelledby="title">
+  <title id="title">Conveyor and gate</title>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <path d="m84 345 268-119 204 88-268 121-204-90Z" fill="#18181b" stroke="#a1a1aa" stroke-width="4"/>
+    <path d="m84 345 204 90v28l-204-90v-28Zm472-31-268 121v28l268-121v-28Z" fill="#18181b" stroke="#52525b" stroke-width="3"/>
+    <path d="m112 345 240-106 164 71-240 108-164-73Z" fill="#18181b" stroke="#4ade80" stroke-width="3"/>
+    <path d="m126 344 225-100m-186 117 225-100m-184 118 225-100m-183 118 225-100" stroke="#52525b" stroke-width="2"/>
+    <path d="m188 277 13-40 17-8 11 48m180 58 13-40 17-8 11 48" stroke="#a1a1aa" stroke-width="4"/>
+    <path d="m208 231 175-78m-175 78 166 72m9-150 166 72m-166-72-8 169" stroke="#a1a1aa" stroke-width="5"/>
+    <path d="m206 227 177-78 166 72-177 79-166-73Z" fill="#18181b" stroke="#4ade80" stroke-width="4"/>
+    <path d="m235 222 98-43 112 49-98 44-112-50Z" fill="#18181b" stroke="#52525b" stroke-width="3"/>
+    <path d="m253 210 78-34 72 32-78 35-72-33Z" fill="#18181b" stroke="#a1a1aa" stroke-width="3"/>
+    <path d="m253 210 72 33v37l-72-33v-37Zm150-2-78 35v37l78-35v-37Z" fill="#18181b" stroke="#52525b" stroke-width="3"/>
+    <path d="m286 190 18-8 22 10-18 8-22-10Zm-17 28 18-8 22 10-18 8-22-10Z" fill="#4ade80" stroke="none"/>
+    <path d="m344 192 24 11m-11-18 24 11m-11-18 24 11" stroke="#a1a1aa" stroke-width="3"/>
+    <path d="m312 308 18-8 25 11-18 8-25-11Z" fill="#18181b" stroke="#4ade80" stroke-width="3"/>
+    <path d="m330 300v-31l25-11v31l-25 11Zm25-11 18 8v-31l-18-8" fill="#18181b" stroke="#a1a1aa" stroke-width="3"/>
+    <path d="m389 274 17-8 24 11-17 8-24-11Z" fill="#18181b" stroke="#a1a1aa" stroke-width="3"/>
+    <path d="m406 266v-29l24-11v29l-24 11Zm24-11 18 8v-29l-18-8" fill="#18181b" stroke="#a1a1aa" stroke-width="3"/>
+    <path d="m146 368 128 56m251-84-138 63" stroke="#27272a" stroke-width="2"/>
+    <circle cx="152" cy="357" r="7" fill="#4ade80" stroke="none"/><circle cx="518" cy="314" r="7" fill="#4ade80" stroke="none"/>
+  </g>
+</svg>

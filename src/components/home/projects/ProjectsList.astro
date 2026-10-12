@@ -4,45 +4,53 @@ import aliaImg from "@/assets/projects/alia.png";
 import celisImg from "@/assets/projects/celis.png";
 import houseStreamingImg from "@/assets/projects/house-streaming.png";
 import uLPImg from "@/assets/projects/your-app-landing.png";
+import { portfolio, projects, type Locale } from "@/content/portfolio";
+const { locale } = Astro.props as { locale: Locale };
+const copy = projects[locale];
+const alt = portfolio[locale].projectAlts;
 ---
 
-<div class={"grid lg:grid-cols-2 gap-10"}>
+<div class="portfolio-project-grid">
 	<ProjectCard
 		title="ALIA"
-		description="ALIA is an online platform I designed and developed that connects users with verified psychologists for emotional support sessions. It handles secure booking, authentication and payments end-to-end, with a strong focus on privacy and a smooth user experience."
+		description={copy[0]}
 		link="https://www.aliabienestar.com/"
 		img={aliaImg}
 		tags={["Next.js", "TailwindCSS", "Typescript", "Prisma", "Stripe", "shadcn/ui"]}
-		alt="alia-screen"
+		alt={alt[0]}
+		locale={locale}
 	/>
 
 	<ProjectCard
 		title="House Streaming"
-		description="House Streaming is an e-commerce catalog I designed and developed for buying streaming accounts (Netflix, Disney+, HBO Max, Spotify and more) with automatic delivery and secure checkout via PayPal, Binance Pay or Pago Móvil."
+		description={copy[1]}
 		link="https://house-streaming.vercel.app/"
 		github="https://github.com/mendoza000/house-streaming-catalog/"
 		img={houseStreamingImg}
 		tags={["Next.js", "TailwindCSS", "Typescript", "Supabase", "PayPal", "shadcn/ui"]}
-		alt="house-streaming-screen"
+		alt={alt[1]}
+		locale={locale}
 	/>
 
 	<ProjectCard
 		title="Celisapp"
-		description="Celisapp is a cross-platform desktop app I designed and developed with Tauri and React for managing a small business end-to-end: sales, inventory, clients, currency exchange and cash balance, with a real-time dashboard and exportable PDF reports."
+		description={copy[2]}
 		link="https://github.com/mendoza000/celisapp/releases/latest"
 		github="https://github.com/mendoza000/celisapp"
 		img={celisImg}
 		tags={["React", "Tauri", "Typescript", "Supabase", "TailwindCSS", "shadcn/ui"]}
-		alt="celisapp-screen"
+		alt={alt[2]}
+		locale={locale}
 	/>
 
 	<ProjectCard
 		title="Your App Landing"
-		description="In just 4 hours, I designed a striking landing page for a mobile application using Vue.js and Tailwind CSS. I particularly highlight the design, which I consider beautiful. This project showcases my ability to create visual solutions in record time."
+		description={copy[3]}
 		link="https://your-app-landing.vercel.app/"
 		github="https://github.com/mendoza000/your-app-landing"
 		img={uLPImg}
 		tags={["Vue.js", "TailwindCSS", "Typescript", "Vite"]}
-		alt="nival-screen"
+		alt={alt[3]}
+		locale={locale}
 	/>
 </div>

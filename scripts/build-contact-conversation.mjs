@@ -1,0 +1,22 @@
+import { readFile, writeFile } from 'node:fs/promises';
+import { createHash } from 'node:crypto';
+const root=new URL('../',import.meta.url), read=p=>readFile(new URL(p,root),'utf8');
+const kernel=await read('.agents/skills/hairline-create/kernel.js'), figure=await read('conversation.js');
+const rest=await read('odd/evidence/contact-laptop-conversation/rest.svg');
+const standalone=await read('hairline-conversation.html');
+const shim='\nexport default HL;\n';
+const emittedKernel=kernel+shim;
+const emittedFigure=`import HL from './contact-conversation-kernel.mjs';\nlet definition;\nconst hairline = value => { definition = value; };\n${figure}\nexport const conversation = definition;\n`;
+if(!emittedFigure.includes(figure)||!emittedKernel.startsWith(kernel)) throw Error('source inclusion mismatch');
+const openTag=rest.match(/^<svg\b[^>]*>/)?.[0];
+if(!openTag||!/(?:^|\s)viewBox="0 0 400 320"/.test(openTag)||!rest.includes('<path')) throw Error('standalone default rest SVG export required');
+const css='<style>path{fill:#f5f5f4;stroke:#52525b;stroke-width:1.2;stroke-linejoin:round;stroke-linecap:round;vector-effect:non-scaling-stroke}circle{fill:#52525b;stroke:none}.dot.off{opacity:.16}.dot.m{fill:#52525b}.nf{fill:none}.lo{stroke:#9ca3af}.hi{stroke:#15803d}@media(prefers-color-scheme:dark){path{fill:#18181b;stroke:#d4d4d8}circle{fill:#d4d4d8}.dot.off{opacity:.16}.dot.m{fill:#d4d4d8}.lo{stroke:#52525b}.hi{stroke:#4ade80}}</style>';
+const fallback=rest.replace(/^<svg\b[^>]*>/,tag=>{
+  const attrs=tag.slice(4,-1).replace(/\sxmlns="[^"]*"/,'');
+  return `<svg xmlns="http://www.w3.org/2000/svg"${attrs} focusable="false">${css}`;
+});
+const marker=/(<script type="module" id="hl-figure">\n)[\s\S]*?(\n<\/script>)/;
+if(!marker.test(standalone)) throw Error('standalone figure slot missing');
+const emittedStandalone=standalone.replace(marker,`$1${figure.trim()}$2`);
+await Promise.all([writeFile(new URL('public/hairline/contact-conversation-kernel.mjs',root),emittedKernel),writeFile(new URL('public/hairline/contact-conversation-figure.mjs',root),emittedFigure),writeFile(new URL('public/hairline/contact-conversation-rest.svg',root),fallback),writeFile(new URL('hairline-conversation.html',root),emittedStandalone)]);
+const hash=x=>createHash('sha256').update(x).digest('hex'); console.log(`kernel sha256:${hash(kernel)}; figure sha256:${hash(figure)}; rest sha256:${hash(rest)}`);

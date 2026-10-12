@@ -1,17 +1,46 @@
 ---
-import { PartyPopper } from "lucide-astro";
+import PortfolioIcon from "@/components/ui/PortfolioIcon";
 import ServicesList from "./ServicesList.astro";
+import { portfolio, type Locale } from "@/content/portfolio";
+const { locale } = Astro.props as { locale: Locale };
+const copy = portfolio[locale];
 ---
+<section class="services-section portfolio-section portfolio-wrap border-t" id="services">
+  <div><h2 class="portfolio-heading"><PortfolioIcon name="tools" className="portfolio-heading-icon" /><span>{copy.servicesHeading}</span></h2><p class="portfolio-section-intro">{copy.servicesIntro}</p></div>
+  <ServicesList locale={locale} />
+</section>
+<style>
+  .services-section { scroll-margin-top:5rem; }
+</style>
+<script>
+  import { exploded, patch, slow, terminal } from "@lucasmarkes/hairline";
+  import { mountHairlineIllustrations } from "./hairline-scroll.mjs";
+  import { createServiceArtwork } from "./service-artwork.mjs";
 
-<div
-	class="px-5 lg:px-0 max-w-7xl mx-auto lg:py-20 py-5 flex flex-col gap-16 dark:border-t-zinc-800 border-t-2"
-	id="services"
->
-	<h2 class="font-extrabold text-5xl max-w-2xl">
-		<span class="dark:text-green-500 text-green-700">Services</span>
-		i offer
-		<PartyPopper class="inline h-12 w-12 text-green-600" />
-	</h2>
-
-	<ServicesList />
-</div>
+  let disposeFigures;
+  const mountFigures = () => {
+    if (disposeFigures) return;
+    const items = Array.from(document.querySelectorAll<HTMLElement>("[data-service-figure]")).map((wrapper) => ({
+      wrapper,
+      host: wrapper.querySelector<HTMLElement>("[data-hairline-host]")!,
+      type: wrapper.dataset.figure,
+      label: wrapper.dataset.label,
+      playOnVisible: ["exploded", "patch", "terminal"].includes(wrapper.dataset.figure),
+      authoredMotion: wrapper.dataset.figure === "gateway" || wrapper.dataset.figure === "maintenance",
+      interactionTarget: wrapper.closest<HTMLElement>("[data-service-card]"),
+    }));
+    const renderers = {
+      exploded, patch, slow, terminal,
+      gateway: (host, options) => createServiceArtwork(host, { ...options, type: "gateway", src: "/hairline/bookings-payments-rest.svg" }),
+      maintenance: (host, options) => createServiceArtwork(host, { ...options, type: "maintenance", src: "/hairline/maintenance-rest.svg" }),
+    };
+    disposeFigures = mountHairlineIllustrations({ items, renderers });
+  };
+  const unmountFigures = () => {
+    disposeFigures?.();
+    disposeFigures = undefined;
+  };
+  document.addEventListener("astro:page-load", mountFigures);
+  document.addEventListener("astro:before-swap", unmountFigures);
+  mountFigures();
+</script>

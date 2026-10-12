@@ -1,0 +1,32 @@
+---
+import { portfolio, type Locale } from "@/content/portfolio";
+import PortfolioIcon from "@/components/ui/PortfolioIcon";
+const { locale } = Astro.props as { locale: Locale };
+const copy = portfolio[locale];
+---
+<section id="process" class="portfolio-section portfolio-wrap portfolio-process" data-process-motion>
+  <div>
+    <h2 class="portfolio-heading"><PortfolioIcon name="process" className="portfolio-heading-icon" /><span>{copy.processHeading}</span></h2>
+    <p class="portfolio-section-intro">{copy.processIntro}</p>
+  </div>
+  <ol class="portfolio-process-list">
+    {copy.processSteps.map((step, index) => <li class="portfolio-process-step">
+      <span class="portfolio-process-number" aria-hidden="true">0{index + 1}</span>
+      <h3>{step.heading}</h3>
+      <p>{step.description}</p>
+      {index < copy.processSteps.length - 1 && <svg class="portfolio-process-connector" viewBox="0 0 32 16" aria-hidden="true"><path d="M1 8h27m-6-6 6 6-6 6" /></svg>}
+    </li>)}
+  </ol>
+</section>
+<script>
+  import { setupProcessMotion } from "./process-motion.mjs";
+  const section = document.querySelector("[data-process-motion]");
+  if (section) {
+    const motion = setupProcessMotion({
+      element: section,
+      media: window.matchMedia("(prefers-reduced-motion: reduce)"),
+      setComplete: () => section.classList.add("portfolio-process-complete"),
+    });
+    document.addEventListener("astro:before-swap", motion, { once: true });
+  }
+</script>

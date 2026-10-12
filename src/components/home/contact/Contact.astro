@@ -1,34 +1,12 @@
 ---
-import { MessageCircle } from "lucide-astro";
+import PortfolioIcon from "@/components/ui/PortfolioIcon";
 import ContactsBar from "./ContactsBar.astro";
-import ContactForm from "./ContactForm.tsx";
+import ContactIllustration from "./ContactIllustration.astro";
+import { portfolio, type Locale } from "@/content/portfolio";
+const { locale } = Astro.props as { locale: Locale };
+const copy = portfolio[locale];
 ---
-
-<div
-	class="px-5 lg:px-0 mx-auto max-w-7xl lg:py-20 py-5 grid lg:grid-cols-2 gap-10"
-	id="contact"
->
-	<div class="flex flex-col gap-2">
-		<h2 class="font-extrabold text-5xl max-w-2xl">
-			<span class="dark:text-green-500 text-green-700">Let's talk</span>
-			{" "}
-			<MessageCircle class="inline h-12 w-12 text-green-600" />
-		</h2>
-
-		<p class="text-xl">
-			My mission is to help you<span
-				class="dark:text-green-500 text-green-700 font-bold"
-			>
-				turn your ideas into reality.</span
-			> Whether you want to discuss a project, make an inquiry, or just say hello,
-			I'm here to answer your questions and work together on your goals. Get in touch,
-			and let's start creating something amazing together.
-		</p>
-	</div>
-
-	<div class="flex flex-col gap-5">
-		<ContactsBar />
-		<!-- <h4 class="font-bold text-xl">Tambien puedes enviarme un correo!</h4> -->
-		<!-- <ContactForm client:load /> -->
-	</div>
-</div>
+<section class="portfolio-section portfolio-wrap portfolio-contact" id="contact">
+  <div class="portfolio-contact-intro"><h2 class="portfolio-heading"><PortfolioIcon name="contact" className="portfolio-heading-icon" /><span>{copy.contactHeading}</span></h2><p class="portfolio-section-intro">{copy.contactCopy}</p><ContactIllustration locale={locale} /></div>
+  <ContactsBar locale={locale} />
+</section>

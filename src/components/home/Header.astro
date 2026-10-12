@@ -1,60 +1,18 @@
 ---
-import { ArrowUpRightSquare, MessageCircle } from "lucide-astro";
-import Button from "@/components/ui/Button";
-import Badge from "@/components/ui/Badge";
+import PortfolioIcon from "@/components/ui/PortfolioIcon";
+import { portfolio, type Locale } from "@/content/portfolio";
+const { locale } = Astro.props as { locale: Locale };
+const copy = portfolio[locale];
+const cv = "https://docs.google.com/document/d/1FZJGxmnlFurOBx3n6XwUYd3EJ1CoIkNi/edit?usp=sharing&ouid=101889099240565360165&rtpof=true&sd=true";
 ---
-
-<script>
-	const theme = localStorage.getItem("theme");
-	// const header = document.getElementById("header");
-	// if (theme === "dark") {
-	// 	header?.classList.remove("header-bg");
-	// 	header?.classList.add("header-bg-dark");
-	// } else {
-	// 	header?.classList.remove("header-bg-dark");
-	// 	header?.classList.add("header-bg");
-	// }
-</script>
-
-<header
-	class={`
-		px-5 pb-20 pt-32 items-center mx-auto bg-gradient-to-t dark:from-custom-dark dark:to-zinc-800 from-custom-light to-zinc-200 
-	`}
->
-	<div class="flex flex-col gap-5 max-w-7xl mx-auto">
-		<div class="flex gap-2">
-			<Badge color="blue">🎉 Available to work</Badge>
-		</div>
-
-		<h1 class="-mb-4 text-xl font-extrabold">
-			Hi! I'm
-			<span class="dark:text-green-500 text-green-700">Omar Mendoza.</span>
-		</h1>
-		<p class="dark:opacity-90 opacity-90 max-w-5xl font-semibold text-4xl">
-			+4 years of experience.
-			<span class="dark:text-yellow-200 text-yellow-600"
-				>Frontend and Backend web developer.</span
-			>
-			<span class="dark:text-red-200 text-red-500"> Venezuelan.</span>
-			<span class="dark:text-blue-200 text-blue-500">
-				Specialized in creating beautiful and functional visual interfaces</span
-			> for an exceptional user experience.
-		</p>
-
-		<div class="grid grid-cols-2 max-w-sm gap-4">
-			<Button>
-				<a href="#contact" class="flex gap-2 hover:gap-3 duration-200 mx-auto"
-					><MessageCircle />Let's talk</a
-				>
-			</Button>
-			<Button variant="outline">
-				<a
-					target="_blank"
-					href="https://docs.google.com/document/d/1FZJGxmnlFurOBx3n6XwUYd3EJ1CoIkNi/edit?usp=sharing&ouid=101889099240565360165&rtpof=true&sd=true"
-					class="flex gap-2 hover:gap-3 duration-200 mx-auto"
-					><ArrowUpRightSquare />Open CV</a
-				>
-			</Button>
-		</div>
-	</div>
+<header id="top" class="portfolio-hero">
+  <div class="portfolio-wrap portfolio-hero-content">
+    <h1>{copy.greeting} <span>{"Omar Mendoza."}</span></h1>
+    <p class="portfolio-hero-offer">{copy.role}</p>
+    <p class="portfolio-hero-detail">{copy.specialty}{copy.outcome}</p>
+    <nav aria-label={locale === "es" ? "Accesos principales" : "Primary actions"} class="portfolio-actions">
+      <a class="portfolio-action portfolio-action-primary" href="#contact"><PortfolioIcon name="contact" className="h-6 w-6" />{copy.clientCta}</a>
+      <a class="portfolio-action portfolio-action-secondary" href={cv} target="_blank" rel="noopener noreferrer"><PortfolioIcon name="file-text" className="h-6 w-6" />{copy.recruiterCta}</a>
+    </nav>
+  </div>
 </header>

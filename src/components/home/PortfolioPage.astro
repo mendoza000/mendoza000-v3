@@ -1,0 +1,28 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Navbar from "@/components/ui/Navbar.astro";
+import Header from "@/components/home/Header.astro";
+import Experiences from "@/components/home/experience/Experiences.tsx";
+import Proyects from "@/components/home/projects/Proyects.astro";
+import Skills from "@/components/home/skills/Skills.tsx";
+import Services from "@/components/home/services/Services.astro";
+import Contact from "@/components/home/contact/Contact.astro";
+import WorkProcess from "@/components/home/process/WorkProcess.astro";
+import Footer from "@/components/ui/Footer.astro";
+import { portfolio, type Locale } from "@/content/portfolio";
+const { locale } = Astro.props as { locale: Locale };
+const copy = portfolio[locale];
+---
+<Layout locale={locale} title={copy.title} description={copy.description}>
+  <main class="portfolio-page">
+    <Navbar locale={locale} />
+    <Header locale={locale} />
+    <Services locale={locale} />
+    <Proyects locale={locale} />
+    <Skills locale={locale} />
+    <Experiences locale={locale} />
+    <WorkProcess locale={locale} />
+    <Contact locale={locale} />
+    <Footer locale={locale} />
+  </main>
+</Layout>

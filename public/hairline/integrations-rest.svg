@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" fill="none" role="img" aria-labelledby="title">
+  <title id="title">Cable integration panel</title>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <path d="m111 176 245-107 171 73-245 109-171-75Z" fill="#18181b" stroke="#a1a1aa" stroke-width="4"/>
+    <path d="m111 176 171 75v111l-171-75V176Zm416-34-245 109v111l245-109V142Z" fill="#18181b" stroke="#52525b" stroke-width="3"/>
+    <path d="m141 176 214-94 142 60-214 95-142-61Z" fill="#18181b" stroke="#52525b" stroke-width="2"/>
+    <path d="m166 172 48-21m-34 35 47-21m-33 35 48-21m-34 35 48-21m-34 35 48-21m-34 35 48-21" stroke="#a1a1aa" stroke-width="3"/>
+    <path d="m262 128 28-12m-14 18 30-13m-14 19 30-13m-14 19 30-13m-14 19 30-13m-14 19 30-13" stroke="#4ade80" stroke-width="3"/>
+    <g fill="#09090b" stroke="#a1a1aa" stroke-width="3">
+      <ellipse cx="340" cy="130" rx="10" ry="6"/><ellipse cx="365" cy="141" rx="10" ry="6"/><ellipse cx="390" cy="152" rx="10" ry="6"/><ellipse cx="415" cy="163" rx="10" ry="6"/>
+      <ellipse cx="322" cy="146" rx="10" ry="6"/><ellipse cx="347" cy="157" rx="10" ry="6"/><ellipse cx="372" cy="168" rx="10" ry="6"/><ellipse cx="397" cy="179" rx="10" ry="6"/>
+      <ellipse cx="304" cy="162" rx="10" ry="6"/><ellipse cx="329" cy="173" rx="10" ry="6"/><ellipse cx="354" cy="184" rx="10" ry="6"/><ellipse cx="379" cy="195" rx="10" ry="6"/>
+    </g>
+    <g fill="#4ade80" stroke="none">
+      <circle cx="340" cy="130" r="2.5"/><circle cx="390" cy="152" r="2.5"/><circle cx="347" cy="157" r="2.5"/><circle cx="397" cy="179" r="2.5"/>
+    </g>
+    <path d="M340 136c-4 64 25 119 90 140 42 13 74 30 78 77" stroke="#4ade80" stroke-width="5"/>
+    <path d="M365 147c-5 73 12 111 58 138 41 24 46 39 49 83" stroke="#a1a1aa" stroke-width="4"/>
+    <path d="M390 158c7 63-7 92-42 120-29 23-39 39-41 67" stroke="#52525b" stroke-width="4"/>
+    <path d="M415 169c19 51 34 69 78 90 28 13 45 32 49 64" stroke="#4ade80" stroke-width="4"/>
+    <path d="m494 353 14 8m-68 12 15 8m-116-40 16 8m194-26 16 9" stroke="#a1a1aa" stroke-width="4"/>
+    <path d="m154 301 111 49m246-112-104 46" stroke="#27272a" stroke-width="2"/>
+  </g>
+</svg>

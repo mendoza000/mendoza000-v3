@@ -1,0 +1,263 @@
+- generic [active] [ref=e1]:
+  - main [ref=e2]:
+    - navigation "Navegación principal" [ref=e3]:
+      - generic [ref=e4]:
+        - link "Inicio" [ref=e5] [cursor=pointer]:
+          - /url: /es/
+          - text: MENDOZA000
+        - list [ref=e6]:
+          - listitem [ref=e7]:
+            - link "Inicio" [ref=e8] [cursor=pointer]:
+              - /url: "#top"
+          - listitem [ref=e9]:
+            - link "Servicios" [ref=e10] [cursor=pointer]:
+              - /url: "#services"
+          - listitem [ref=e11]:
+            - link "Proyectos" [ref=e12] [cursor=pointer]:
+              - /url: "#projects"
+          - listitem [ref=e13]:
+            - link "Experiencia" [ref=e14] [cursor=pointer]:
+              - /url: "#experiences"
+          - listitem [ref=e15]:
+            - link "Contacto" [ref=e16] [cursor=pointer]:
+              - /url: "#contact"
+          - listitem [ref=e17]:
+            - link "Blog" [ref=e18] [cursor=pointer]:
+              - /url: https://devstopia.vercel.app
+          - listitem [ref=e19]:
+            - link "English" [ref=e20] [cursor=pointer]:
+              - /url: /en/
+          - listitem [ref=e21]:
+            - button "Cambiar al tema oscuro" [ref=e22] [cursor=pointer]: Oscuro
+    - generic [ref=e24]:
+      - heading "Hola, soy Omar Mendoza." [level=1] [ref=e25]
+      - paragraph [ref=e26]: Aplicaciones web, integraciones y automatización de procesos.
+      - paragraph [ref=e27]: Construyo soluciones web para necesidades reales.
+      - navigation "Accesos principales" [ref=e28]:
+        - link "¿Tienes un proyecto? Hablemos" [ref=e29] [cursor=pointer]:
+          - /url: "#contact"
+        - link "¿Buscas mi experiencia? Ver CV" [ref=e32] [cursor=pointer]:
+          - /url: https://docs.google.com/document/d/1FZJGxmnlFurOBx3n6XwUYd3EJ1CoIkNi/edit?usp=sharing&ouid=101889099240565360165&rtpof=true&sd=true
+    - generic [ref=e37]:
+      - generic [ref=e38]:
+        - heading "Servicios" [level=2] [ref=e39]
+        - paragraph [ref=e46]: Propuestas para crear o conectar herramientas digitales.
+      - generic [ref=e47]:
+        - article [ref=e48]:
+          - img "Ventana de aplicación por capas" [ref=e50]
+          - generic [ref=e52]:
+            - heading "Aplicaciones web" [level=3] [ref=e53]
+            - paragraph [ref=e54]: Aplicaciones web adaptadas a las necesidades de tu producto o negocio.
+            - link "Hablemos de tu proyecto" [ref=e55] [cursor=pointer]:
+              - /url: "#contact"
+        - article [ref=e59]:
+          - img "Panel de conexiones con cables" [ref=e61]
+          - generic [ref=e63]:
+            - heading "Integraciones" [level=3] [ref=e64]
+            - paragraph [ref=e65]: Conexión entre aplicaciones y servicios mediante APIs.
+            - link "Hablemos de tu proyecto" [ref=e66] [cursor=pointer]:
+              - /url: "#contact"
+        - article [ref=e70]:
+          - img "Cinta transportadora y compuerta" [ref=e72]
+          - generic [ref=e74]:
+            - heading "Automatización de procesos" [level=3] [ref=e75]
+            - paragraph [ref=e76]: Automatización de tareas y flujos de trabajo con herramientas como n8n.
+            - link "Hablemos de tu proyecto" [ref=e77] [cursor=pointer]:
+              - /url: "#contact"
+        - article [ref=e81]:
+          - img "Tarjeta física pasando por un terminal POS" [ref=e83]
+          - generic [ref=e85]:
+            - heading "Integración de pasarelas de pago" [level=3] [ref=e86]
+            - paragraph [ref=e87]: Integración de pasarelas para checkout, confirmación de transacciones y estados de pago.
+            - link "Ver funciones de pago en ALIA y House Streaming" [ref=e88] [cursor=pointer]:
+              - /url: "#projects"
+            - link "Hablemos de tu proyecto" [ref=e92] [cursor=pointer]:
+              - /url: "#contact"
+        - article [ref=e96]:
+          - img "Pantalla operativa con filas e informes" [ref=e98]
+          - generic [ref=e100]:
+            - heading "Paneles internos e informes" [level=3] [ref=e101]
+            - paragraph [ref=e102]: Interfaces para consultar y gestionar información operativa, con informes según las necesidades del equipo.
+            - link "Ver Celisapp en proyectos" [ref=e103] [cursor=pointer]:
+              - /url: "#projects"
+            - link "Hablemos de tu proyecto" [ref=e107] [cursor=pointer]:
+              - /url: "#contact"
+        - article [ref=e111]:
+          - img "Ventana de código con una herramienta" [ref=e113]
+          - generic [ref=e115]:
+            - heading "Mantenimiento y evolución de aplicaciones" [level=3] [ref=e116]
+            - paragraph [ref=e117]: Mantenimiento de soluciones web existentes, incorporación de módulos y nuevas funciones por etapas.
+            - link "Experiencia en mantenimiento de soluciones web" [ref=e118] [cursor=pointer]:
+              - /url: "#experiences"
+            - link "Hablemos de tu proyecto" [ref=e122] [cursor=pointer]:
+              - /url: "#contact"
+    - generic [ref=e126]:
+      - heading "Proyectos seleccionados" [level=2] [ref=e127]
+      - generic [ref=e130]:
+        - generic [ref=e131]:
+          - generic [ref=e132]:
+            - heading "ALIA" [level=4] [ref=e133]
+            - 'link "Abrir proyecto: ALIA" [ref=e135] [cursor=pointer]':
+              - /url: https://www.aliabienestar.com/
+          - img "Vista de la plataforma ALIA para reservar sesiones" [ref=e140]
+          - paragraph [ref=e141]: Plataforma para conectar usuarios con psicólogos verificados y reservar sesiones de apoyo emocional. Incluye autenticación, reservas y pagos.
+          - generic "Tecnologías" [ref=e142]:
+            - generic [ref=e143]: Next.js
+            - generic [ref=e144]: TailwindCSS
+            - generic [ref=e145]: Typescript
+            - generic [ref=e146]: Prisma
+            - generic [ref=e147]: Stripe
+            - generic [ref=e148]: shadcn/ui
+        - generic [ref=e149]:
+          - generic [ref=e150]:
+            - heading "House Streaming" [level=4] [ref=e151]
+            - generic [ref=e152]:
+              - link "Repositorio de House Streaming en GitHub" [ref=e153] [cursor=pointer]:
+                - /url: https://github.com/mendoza000/house-streaming-catalog/
+              - 'link "Abrir proyecto: House Streaming" [ref=e157] [cursor=pointer]':
+                - /url: https://house-streaming.vercel.app/
+          - img "Catálogo de cuentas de House Streaming" [ref=e162]
+          - paragraph [ref=e163]: Catálogo de comercio electrónico para cuentas de streaming, con pagos mediante PayPal, Binance Pay o Pago Móvil y entrega automática.
+          - generic "Tecnologías" [ref=e164]:
+            - generic [ref=e165]: Next.js
+            - generic [ref=e166]: TailwindCSS
+            - generic [ref=e167]: Typescript
+            - generic [ref=e168]: Supabase
+            - generic [ref=e169]: PayPal
+            - generic [ref=e170]: shadcn/ui
+        - generic [ref=e171]:
+          - generic [ref=e172]:
+            - heading "Celisapp" [level=4] [ref=e173]
+            - generic [ref=e174]:
+              - link "Repositorio de Celisapp en GitHub" [ref=e175] [cursor=pointer]:
+                - /url: https://github.com/mendoza000/celisapp
+              - 'link "Abrir proyecto: Celisapp" [ref=e179] [cursor=pointer]':
+                - /url: https://github.com/mendoza000/celisapp/releases/latest
+          - img "Panel de gestión de ventas e inventario de Celisapp" [ref=e184]
+          - paragraph [ref=e185]: Aplicación de escritorio multiplataforma para ventas, inventario, clientes, cambio de divisas y caja; incluye panel en tiempo real e informes PDF exportables.
+          - generic "Tecnologías" [ref=e186]:
+            - generic [ref=e187]: React
+            - generic [ref=e188]: Tauri
+            - generic [ref=e189]: Typescript
+            - generic [ref=e190]: Supabase
+            - generic [ref=e191]: TailwindCSS
+            - generic [ref=e192]: shadcn/ui
+        - generic [ref=e193]:
+          - generic [ref=e194]:
+            - heading "Your App Landing" [level=4] [ref=e195]
+            - generic [ref=e196]:
+              - link "Repositorio de Your App Landing en GitHub" [ref=e197] [cursor=pointer]:
+                - /url: https://github.com/mendoza000/your-app-landing
+              - 'link "Abrir proyecto: Your App Landing" [ref=e201] [cursor=pointer]':
+                - /url: https://your-app-landing.vercel.app/
+          - img "Landing page para una aplicación móvil" [ref=e206]
+          - paragraph [ref=e207]: Landing page para una aplicación móvil, diseñada y creada con Vue.js y Tailwind CSS.
+          - generic "Tecnologías" [ref=e208]:
+            - generic [ref=e209]: Vue.js
+            - generic [ref=e210]: TailwindCSS
+            - generic [ref=e211]: Typescript
+            - generic [ref=e212]: Vite
+    - complementary "Tecnologías en los proyectos" [ref=e213]:
+      - heading "Tecnologías en los proyectos" [level=2] [ref=e214]
+      - paragraph [ref=e215]: Algunas tecnologías que aparecen en los proyectos seleccionados.
+      - list [ref=e216]:
+        - listitem [ref=e217]: Next.js
+        - listitem [ref=e218]: React
+        - listitem [ref=e219]: TypeScript
+        - listitem [ref=e220]: JavaScript
+        - listitem [ref=e221]: Vue.js
+        - listitem [ref=e222]: Node.js
+        - listitem [ref=e223]: Go
+        - listitem [ref=e224]: Supabase
+        - listitem [ref=e225]: MySQL
+        - listitem [ref=e226]: MongoDB
+        - listitem [ref=e227]: Tailwind CSS
+        - listitem [ref=e228]: n8n
+    - generic [ref=e229]:
+      - generic [ref=e230]:
+        - heading "Experiencia y formación" [level=2] [ref=e231]
+        - paragraph [ref=e232]: Experiencia profesional y formación en desarrollo web.
+      - generic [ref=e233]:
+        - generic [ref=e234]:
+          - heading "Experiencia" [level=3] [ref=e235]
+          - generic [ref=e236]:
+            - article [ref=e237]:
+              - generic [ref=e238]:
+                - heading "Freelance" [level=4] [ref=e239]
+                - paragraph [ref=e240]: Trabajo actual
+              - paragraph [ref=e241]: Trabajo como freelance con clientes propios en proyectos de desarrollo web.
+            - article [ref=e242]:
+              - generic [ref=e243]:
+                - heading "Desarrollador frontend (remoto) · Atrinium, España" [level=4] [ref=e244]
+                - paragraph [ref=e245]: 2024 - 2026-09-21
+              - paragraph [ref=e246]: Desarrollé y mantuve soluciones web con Next.js para proyectos del sector de seguros, incluido el software Hermes. Implementé funcionalidades, cuidé la calidad y consistencia del código siguiendo principios de clean code y entregué interfaces optimizadas y fáciles de usar. También contribuí al desarrollo de la landing page de Flesip, centrada en una experiencia moderna y adaptable.
+            - article [ref=e247]:
+              - generic [ref=e248]:
+                - heading "Nival Digital · Landing page" [level=4] [ref=e249]
+                - paragraph [ref=e250]: 2023 - 2023
+              - paragraph [ref=e251]: Desarrollé la landing page de Nival Digital con React, Next.js, Tailwind CSS y TypeScript.
+            - paragraph [ref=e252]: Proyectos personales
+        - generic [ref=e253]:
+          - heading "Formación académica" [level=3] [ref=e254]
+          - generic [ref=e255]:
+            - paragraph [ref=e256]: 2020 - Present
+            - paragraph [ref=e257]: Desde 2023 curso Ingeniería Informática en UPTAI. También he realizado cursos en Platzi y Udemy sobre Go, Vue3, TypeScript y NextJS, completados en 2023. Además, estudié React, NodeJS y JavaScript con cursos de Fernando Herrera, completados entre 2021 y 2022.
+    - generic [ref=e258]:
+      - generic [ref=e259]:
+        - heading "Cómo trabajo" [level=2] [ref=e260]
+        - paragraph [ref=e261]: Un enfoque de entrega propuesto, acordado para cada proyecto.
+      - list [ref=e262]:
+        - listitem [ref=e263]:
+          - generic [aria-hidden] [ref=e264]: "01"
+          - heading "Entender tu necesidad" [level=3] [ref=e265]
+          - paragraph [ref=e266]: Conocer qué quieres resolver y cómo trabajas actualmente.
+        - listitem [ref=e269]:
+          - generic [aria-hidden] [ref=e270]: "02"
+          - heading "Definir el camino" [level=3] [ref=e271]
+          - paragraph [ref=e272]: Acordar alcance, prioridades y etapas.
+        - listitem [ref=e275]:
+          - generic [aria-hidden] [ref=e276]: "03"
+          - heading "Construir por etapas" [level=3] [ref=e277]
+          - paragraph [ref=e278]: Implementar la solución según lo acordado.
+        - listitem [ref=e281]:
+          - generic [aria-hidden] [ref=e282]: "04"
+          - heading "Verificar el resultado" [level=3] [ref=e283]
+          - paragraph [ref=e284]: Revisar el funcionamiento y los casos importantes.
+    - generic [ref=e285]:
+      - generic [ref=e286]:
+        - heading "Hablemos" [level=2] [ref=e287]
+        - paragraph [ref=e290]: Cuéntame qué necesitas construir o conectar. También puedes consultar mi experiencia y formación en el CV.
+      - generic [ref=e291]:
+        - link "mendoza000.dev@gmail.com Escríbeme sobre tu proyecto" [ref=e292] [cursor=pointer]:
+          - /url: mailto:mendoza000.dev@gmail.com
+          - paragraph [ref=e298]:
+            - generic [ref=e299]: mendoza000.dev@gmail.com
+            - generic [ref=e300]: Escríbeme sobre tu proyecto
+        - link "Twitter | @mendoza000x Sígueme en Twitter/X" [ref=e301] [cursor=pointer]:
+          - /url: https://x.com/mendoza000x
+          - paragraph [ref=e304]:
+            - generic [ref=e305]: Twitter | @mendoza000x
+            - generic [ref=e306]: Sígueme en Twitter/X
+        - link "Github | @mendoza000 Mira mis proyectos y contribuciones" [ref=e307] [cursor=pointer]:
+          - /url: https://github.com/mendoza000
+          - paragraph [ref=e310]:
+            - generic [ref=e311]: Github | @mendoza000
+            - generic [ref=e312]: Mira mis proyectos y contribuciones
+        - link "Discord | @mendoza000 Juguemos o conversemos por Discord" [ref=e313] [cursor=pointer]:
+          - /url: https://discordapp.com/users/mendoza000#2939
+          - paragraph [ref=e319]:
+            - generic [ref=e320]: Discord | @mendoza000
+            - generic [ref=e321]: Juguemos o conversemos por Discord
+        - link "mendoza000.dev@gmail.com Envíame un correo" [ref=e322] [cursor=pointer]:
+          - /url: mailto:mendoza000.dev@gmail.com
+          - paragraph [ref=e328]:
+            - generic [ref=e329]: mendoza000.dev@gmail.com
+            - generic [ref=e330]: Envíame un correo
+    - generic [ref=e331]:
+      - paragraph [ref=e332]: Hecho por Omar Mendoza
+      - paragraph [ref=e333]: © 2026 Todos los derechos reservados.
+  - generic [ref=e336]:
+    - button [ref=e337]
+    - button [ref=e343]
+    - button [ref=e347]
+    - button [ref=e352]

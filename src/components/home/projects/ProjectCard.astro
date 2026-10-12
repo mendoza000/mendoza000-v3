@@ -1,7 +1,7 @@
 ---
-import Button from "@/components/ui/Button";
 import { Image } from "astro:assets";
-import { ArrowUpRight, GithubIcon } from "lucide-react";
+import PortfolioIcon from "@/components/ui/PortfolioIcon";
+import { portfolio, type Locale } from "@/content/portfolio";
 
 interface Props {
 	img: any;
@@ -11,15 +11,17 @@ interface Props {
 	github?: string;
 	tags: string[];
 	alt: string;
+	locale: Locale;
 }
 
 const props: Props = Astro.props;
+const copy = portfolio[props.locale];
 ---
 
 <div
-	class="px-5 py-5 rounded-xl bg-gradient-to-tr dark:from-custom-dark dark:to-zinc-800 from-custom-light to-zinc-200 flex flex-col gap-6 duration-200 shadow-xl"
+	class="portfolio-project"
 >
-	<div class="flex justify-between">
+	<div class="portfolio-project-heading">
 		<h4 class="font-bold capitalize text-xl">{props.title}</h4>
 
 		<div class="flex gap-1">
@@ -29,8 +31,10 @@ const props: Props = Astro.props;
 						class="p-1 rounded-lg border-2 border-transparent inline-flex duration-200 group hover:border-zinc-700"
 						href={props.github}
 						target="_blank"
+						rel="noopener noreferrer"
+						aria-label={`${copy.projectRepository} ${props.title} ${copy.projectRepositorySuffix}`}
 					>
-						<GithubIcon className="group-hover:animate-wiggle-more group-hover:animate-twice group-hover:animate-duration-700 h-5 w-5 text-zinc-500" />
+						<PortfolioIcon name="github" className="group-hover:animate-wiggle-more group-hover:animate-twice group-hover:animate-duration-700 h-5 w-5 text-zinc-500" />
 					</a>
 				)
 			}
@@ -39,41 +43,24 @@ const props: Props = Astro.props;
 				class="p-1 rounded-lg border-2 border-transparent inline-flex duration-200 group hover:border-zinc-700"
 				href={props.link}
 				target="_blank"
+				rel="noopener noreferrer"
+				aria-label={`${copy.projectOpen}: ${props.title}`}
 			>
-				<ArrowUpRight
-					className="group-hover:animate-wiggle-more group-hover:animate-twice group-hover:animate-duration-700 h-5 w-5 text-zinc-500"
-				/>
+				<PortfolioIcon name="arrow-up-right" className="group-hover:animate-wiggle-more group-hover:animate-twice group-hover:animate-duration-700 h-5 w-5 text-zinc-500" />
 			</a>
 		</div>
 	</div>
-	<div class="grid lg:grid-cols-2 gap-5">
-		<p class="dark:opacity-40 opacity-80">{props.description}</p>
-		<div class="aspect-[4/3] rounded-lg overflow-hidden">
+	<div class="portfolio-project-image aspect-[4/3] overflow-hidden">
 			<Image
 				src={props.img}
-				alt="project-screen"
+				alt={props.alt}
 				class={"h-full w-full object-cover"}
 				draggable="false"
 			/>
-		</div>
+	</div>
+	<p class="portfolio-project-description">{props.description}</p>
+	<div class="portfolio-tech-list" aria-label={props.locale === "es" ? "Tecnologías" : "Technologies"}>
+		{props.tags.map((tag) => <span>{tag}</span>)}
 	</div>
 
-	<div class="flex gap-2 flex-wrap">
-		{
-			props.tags.map((tag) => (
-				<span class="inline-block dark:bg-zinc-800 bg-zinc-800 px-3 py-1 text-sm font-semibold text-white rounded-full hover:bg-green-700 duration-200 cursor-default  ">
-					{tag}
-				</span>
-			))
-		}
-	</div>
-
-	<!-- <div class="flex gap-5">
-		<Button variant="primary">
-			<a href={props.link} target="_blank">Ver proyecto</a>
-		</Button>
-		<Button variant="outline">
-			<a href={props.github} target="_blank">Ver codigo</a>
-		</Button>
-	</div> -->
 </div>

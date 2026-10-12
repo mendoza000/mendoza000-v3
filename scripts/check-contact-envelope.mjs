@@ -1,0 +1,72 @@
+import assert from 'node:assert/strict';
+import { readFile } from 'node:fs/promises';
+import { createHash } from 'node:crypto';
+const read = path => readFile(new URL(path, import.meta.url), 'utf8');
+const [figure, standalone, contact, host, adapter, generator, kernel, moduleFigure, fallback, kernelSource, restExport] = await Promise.all([
+  read('../envelope.js'), read('../hairline-envelope.html'), read('../src/components/home/contact/Contact.astro'),
+  read('../src/components/home/contact/ContactEnvelope.astro'), read('../src/components/home/contact/contact-envelope.mjs'),
+  read('./build-contact-envelope.mjs'), read('../public/hairline/contact-envelope-kernel.mjs'),
+  read('../public/hairline/contact-envelope-figure.mjs'), read('../public/hairline/contact-envelope-rest.svg'),
+  read('../.agents/skills/hairline-create/kernel.js'), read('../odd/evidence/contact-envelope/rest-stage-export.svg'),
+]);
+assert.match(figure, /hairline\(\s*\{[\s\S]*name:\s*"envelope"/);
+assert.match(figure, /range:\s*\[[^\]]+\]/);
+assert.match(figure, /register\(stage/);
+assert.match(figure, /pointer\(stage,\s*\{\s*move:/);
+assert.match(figure, /stepS\(angle,\s*dt\)/);
+assert.match(figure, /fillet\(outline, \[1\.2, 1\.2, 1\.2\]\)/, 'flap corners are rounded in the authored SVG geometry');
+assert.match(figure, /const flapLength = \(y1 - y0 - 6\) \/ 2;/, 'resting flap should cover only the upper half of the pouch face');
+assert.match(figure, /const tip = \[0, hinge \+ flapLength \* Math\.cos\(a\), depth \+ 0\.2 \+ flapLength \* Math\.sin\(a\)\]/, 'flap rotates from its real back-edge hinge with a half-face radius');
+assert.match(figure, /folds\.setAttribute\('d', open\(\[P\(x0 \+ 3, y1 - 3, depth \+ 0\.3\), P\(0, hinge \+ flapLength, depth \+ 0\.3\), P\(x1 - 3, y1 - 3, depth \+ 0\.3\)\]\)\);/, 'opposing lower seams should meet at the resting flap tip');
+assert.match(figure, /clamp\(1 - Math\.hypot\(dx, dy\) \/ radius, 0, 1\)/);
+assert.match(figure, /tour:\s*\[\[250, 200\], \[220, 200\], \[200, 200\], null\]/);
+assert.match(figure, /read\.textContent\s*=/);
+assert.match(figure, /bag\.add\(board\.unregister\)/);
+assert.doesNotMatch(figure, /requestAnimationFrame|setTimeout|setInterval|new Function|eval\(/);
+const kernelShim = '\nexport default HL;\n';
+assert.ok(kernel.endsWith(kernelShim), 'kernel module must end with only the documented export shim');
+assert.equal(kernel.slice(0, -kernelShim.length), kernelSource, 'kernel module must contain exact frozen kernel bytes');
+assert.equal(moduleFigure.split(figure).length, 2, 'figure module must contain the exact authored figure bytes once');
+assert.match(moduleFigure, /import HL from '\.\/contact-envelope-kernel\.mjs'/);
+assert.match(moduleFigure, /export const envelope = definition;/);
+assert.match(adapter, /root\.querySelector\('\[data-envelope-stage\] > svg'\)/, 'mount targets live SVG, never static fallback SVG');
+assert.match(adapter, /media\.matches/);
+assert.match(adapter, /document\.hidden/);
+assert.match(adapter, /if \(disposed \|\| mount \|\| media\.matches/);
+assert.match(host, /data-mounted="true"\] \.envelope-fallback \{ visibility: hidden; \}/);
+assert.match(adapter, /IntersectionObserver/);
+assert.match(adapter, /astro:before-swap/);
+assert.match(adapter, /document\.addEventListener\('visibilitychange'/);
+assert.match(adapter, /observer\.disconnect\(\)/);
+assert.match(adapter, /media\.removeEventListener\('change'/);
+assert.match(host, /contact-envelope-rest\.svg/);
+assert.ok(host.indexOf('contact-envelope-rest.svg') < host.indexOf('set:html={fallbackSvg}'), 'static fallback is sourced before the interactive host');
+assert.match(host, /set:html=\{fallbackSvg\}/, 'same authored SVG asset is embedded as the no-JS/reduced-motion fallback');
+assert.match(host, /data-mounted="true"\] \.envelope-fallback \{ visibility: hidden; \}/);
+assert.match(host, /html\.dark[\s\S]*#4ade80/i);
+const dValues = text => [...text.matchAll(/<path\b[^>]*\bd="([^"]+)"/g)].map(match => match[1]);
+const exportedPaths = dValues(restExport), fallbackPaths = dValues(fallback);
+assert.equal(exportedPaths.length, 4, 'captured default figure should export all rest paths');
+assert.deepEqual(fallbackPaths, exportedPaths, 'static fallback paths must exactly match the browser-exported rest SVG');
+const allValues = fallbackPaths.flatMap(d => [...d.matchAll(/-?\d+(?:\.\d+)?/g)].map(match => Number(match[0])));
+assert.ok(allValues.length >= 8 && allValues.every(Number.isFinite), 'exported path coordinates must be finite');
+const xs = allValues.filter((_, index) => index % 2 === 0), ys = allValues.filter((_, index) => index % 2 === 1);
+const restCoverage = (Math.max(...xs) - Math.min(...xs)) * (Math.max(...ys) - Math.min(...ys)) / (400 * 320);
+assert.ok(restCoverage >= 0.25, `rest silhouette coverage should clear the quarter-frame thumbnail floor, got ${restCoverage.toFixed(3)}`);
+assert.match(restExport, /viewBox="0 0 400 320"/);
+assert.match(fallback, /viewBox="0 0 400 320"/);
+assert.match(generator, /createHash|sha256/);
+assert.match(generator, /rest-stage-export\.svg/);
+const standaloneFigure = standalone.match(/<script type="module" id="hl-figure">\n([\s\S]*?)\n<\/script>/)?.[1];
+assert.ok(standaloneFigure?.includes(figure.trim()), 'standalone page must embed the exact authored figure source');
+assert.match(host, /contact-envelope\.mjs/);
+assert.match(contact, /<PortfolioIcon name="contact" className="portfolio-heading-icon"\s*\/><span>/);
+assert.match(contact, /<ContactEnvelope locale=\{locale\}\s*\/>/);
+assert.match(contact, /<ContactsBar locale=\{locale\}\s*\/>/);
+assert.match(adapter, /IntersectionObserver/);
+assert.match(adapter, /destroy\(/);
+assert.match(adapter, /mount\(/);
+assert.match(adapter, /prefers-reduced-motion: reduce/);
+assert.match(fallback, /<svg[\s>]/);
+assert.match(fallback, /#4ade80|#15803d/i);
+console.log('Contact envelope contracts passed');
