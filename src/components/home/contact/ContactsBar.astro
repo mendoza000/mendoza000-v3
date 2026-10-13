@@ -16,27 +16,11 @@ const { locale } = Astro.props as { locale: Locale };
 	</div>
 	<div class="portfolio-contact-socials" aria-label={locale === "es" ? "Redes sociales" : "Social links"}>
 	<ContactItem
-		href="https://x.com/mendoza000x"
-		title="Twitter | @mendoza000x"
-		text={locale === "es" ? "Sígueme en Twitter/X" : "Follow me on Twitter/X"}
-	>
-		<PortfolioIcon name="twitter" className="h-12 w-12 text-green-500" />
-	</ContactItem>
-
-	<ContactItem
 		href="https://github.com/mendoza000"
 		title="Github | @mendoza000"
 		text={locale === "es" ? "Mira mis proyectos y contribuciones" : "View my projects and contributions"}
 	>
 		<PortfolioIcon name="github" className="h-12 w-12 text-green-500" />
-	</ContactItem>
-
-	<ContactItem
-		href="https://discordapp.com/users/mendoza000#2939"
-		title="Discord | @mendoza000"
-		text={locale === "es" ? "Juguemos o conversemos por Discord" : "Let's play or chat on Discord"}
-	>
-		<PortfolioIcon name="discord" className="h-12 w-12 text-green-500" />
 	</ContactItem>
 
 	</div>
