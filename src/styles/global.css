@@ -17,6 +17,14 @@ html.dark .portfolio-page {
   --portfolio-muted: #d4d4d8;
 }
 
+/* Keep injected Hairline fills tied to the visible light theme, not OS/browser defaults. */
+html:not(.dark) .service-card .hairline-host svg :is(path, polygon, ellipse, line):not(.nf) {
+  fill: #f5f5f4 !important;
+}
+html.dark .service-card .hairline-host svg :is(path, polygon, ellipse, line):not(.nf) {
+  fill: #18181b !important;
+}
+
 .portfolio-wrap {
   width: min(100% - 2.5rem, 80rem);
   margin-inline: auto;

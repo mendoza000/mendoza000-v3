@@ -14,17 +14,18 @@ const headingId = `service-${figure}-title`;
 <article class="service-card" data-service-card aria-labelledby={headingId}>
   <div class="service-art" data-service-figure data-figure={figure} data-label={label}>
     <img class="service-fallback" data-figure-fallback src={fallbackAsset} alt={label} width="640" height="512" loading="lazy" />
-    <div class="hairline-host" data-hairline-host style="--hairline-plate:#18181b;--hairline-hi:#4ade80;--hairline-edge:#789b7f;--hairline-mid:#52525b;--hairline-lo:#27272a"></div>
+    <div class="hairline-host" data-hairline-host></div>
   </div>
   <div class="service-copy">
-    <h3 id={headingId} style="color:#fafafa">{title}</h3>
+    <h3 id={headingId}>{title}</h3>
     <p>{description}</p>
     {evidence && <a class="service-evidence" href={evidence.href}>{evidence.label}<PortfolioIcon name="arrow-up-right" className="h-3.5 w-3.5" /></a>}
     <a class="service-cta" href="#contact">{contactCta}<PortfolioIcon name="arrow-up-right" className="h-4 w-4" /></a>
   </div>
 </article>
 <style>
-  .service-card { --hairline-plate:#18181b; --hairline-hi:#4ade80; --hairline-edge:#789b7f; --hairline-mid:#52525b; --hairline-lo:#27272a; display:flex; flex-direction:column; min-width:0; padding:clamp(1rem,2vw,1.5rem); border:1px solid rgb(161 161 170 / .2); border-radius:1.25rem; background:#18181b; }
+  .service-card { --hairline-plate:#f5f5f4; --hairline-hi:#15803d; --hairline-edge:#789b7f; --hairline-mid:#a1a1aa; --hairline-lo:#52525b; display:flex; flex-direction:column; min-width:0; padding:clamp(1rem,2vw,1.5rem); border:1px solid #d4d4d4; border-radius:1.25rem; background:#f5f5f4; color:#27272a; }
+  :global(html.dark) .service-card { --hairline-plate:#18181b; --hairline-hi:#4ade80; --hairline-edge:#789b7f; --hairline-mid:#52525b; --hairline-lo:#27272a; border-color:#3f3f46; background:#18181b; color:#f4f4f5; }
   .service-art { position:relative; width:100%; aspect-ratio:5 / 4; overflow:hidden; }
   .service-fallback, .hairline-host { position:absolute; inset:0; width:100%; height:100%; }
   .service-fallback { display:block; object-fit:contain; }
@@ -32,9 +33,13 @@ const headingId = `service-${figure}-title`;
   .service-art[data-ready="true"] .service-fallback { display:none; }
   .service-copy { display:flex; flex:1; flex-direction:column; padding:.75rem .2rem .15rem; }
   .service-copy h3 { font-size:clamp(1.35rem,2vw,1.65rem); font-weight:750; line-height:1.2; letter-spacing:-.02em; }
-  .service-copy p { margin-top:.65rem; color:#d4d4d8; line-height:1.65; }
-  .service-evidence { display:inline-flex; width:max-content; max-width:100%; align-items:center; gap:.3rem; margin-top:1rem; color:#a1a1aa; font-size:.875rem; text-decoration:underline; text-underline-offset:3px; }
-  .service-cta { display:inline-flex; width:max-content; align-items:center; gap:.35rem; margin-top:auto; padding-top:1.25rem; color:#4ade80; font-weight:650; text-decoration:underline; text-underline-offset:4px; }
-  .service-cta:focus-visible { outline:2px solid #4ade80; outline-offset:4px; border-radius:.15rem; }
+  .service-copy p { margin-top:.65rem; color:#52525b; line-height:1.65; }
+  :global(html.dark) .service-copy p { color:#d4d4d8; }
+  .service-evidence { display:inline-flex; width:max-content; max-width:100%; align-items:center; gap:.3rem; margin-top:1rem; color:#52525b; font-size:.875rem; text-decoration:underline; text-underline-offset:3px; }
+  :global(html.dark) .service-evidence { color:#a1a1aa; }
+  .service-cta { display:inline-flex; width:max-content; align-items:center; gap:.35rem; margin-top:auto; padding-top:1.25rem; color:#15803d; font-weight:650; text-decoration:underline; text-underline-offset:4px; }
+  :global(html.dark) .service-cta { color:#4ade80; }
+  .service-cta:focus-visible { outline:2px solid #15803d; outline-offset:4px; border-radius:.15rem; }
+  :global(html.dark) .service-cta:focus-visible { outline-color:#4ade80; }
   @media (prefers-reduced-motion:reduce) { .service-cta { scroll-behavior:auto; } }
 </style>
