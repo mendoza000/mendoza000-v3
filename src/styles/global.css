@@ -74,11 +74,17 @@ html.dark .portfolio-heading-icon { color: #4ade80; }
 }
 
 .portfolio-wordmark { letter-spacing: 0.04em; }
+.portfolio-menu-toggle { display: none; }
+.portfolio-nav-controls { display: flex; align-items: center; gap: 0.35rem; }
+.portfolio-language-toggle { display: inline-flex; min-height: 2.75rem; align-items: center; padding-inline: 0.65rem; font-weight: 700; text-decoration: underline; text-underline-offset: 0.25em; }
 .portfolio-nav-links { display: flex; flex-wrap: wrap; align-items: center; gap: 0.25rem 1rem; }
 .portfolio-nav-links a { text-underline-offset: 0.25em; }
 .portfolio-nav-links a,
 .portfolio-theme-toggle { display: inline-flex; align-items: center; min-height: 2.75rem; padding-inline: 0.65rem; }
-.portfolio-theme-toggle { border: 1px solid var(--portfolio-border); border-radius: 0.4rem; background: transparent; color: inherit; font: inherit; font-weight: 600; cursor: pointer; }
+.portfolio-theme-toggle { justify-content: center; width: 2.75rem; border: 1px solid var(--portfolio-border); border-radius: 0.4rem; background: transparent; color: inherit; font: inherit; cursor: pointer; }
+.portfolio-theme-toggle svg { width: 1.2rem; height: 1.2rem; fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.8; }
+.portfolio-theme-toggle [data-theme-icon="moon"], .portfolio-theme-toggle[data-active-theme="dark"] [data-theme-icon="sun"] { display: none; }
+.portfolio-theme-toggle[data-active-theme="dark"] [data-theme-icon="moon"] { display: block; }
 .portfolio-theme-toggle:hover { background: rgb(34 197 94 / 12%); }
 .portfolio-nav a:focus-visible,
 .portfolio-theme-toggle:focus-visible { outline: 3px solid #15803d; outline-offset: 2px; }
@@ -225,15 +231,25 @@ html.dark .portfolio-footer span { color: #4ade80; }
 }
 
 @media (max-width: 40rem) {
-  .portfolio-nav-links { width: 100%; gap: 0.15rem; }
-  .portfolio-nav-links a,
-  .portfolio-theme-toggle { min-height: 2.75rem; padding-inline: 0.55rem; }
-  .portfolio-nav-inner { align-items: flex-start; flex-direction: column; }
-  .portfolio-nav-links { gap: 0.2rem 0.65rem; }
-  .portfolio-nav-links a { font-size: 0.9rem; }
+  .portfolio-nav-inner { position: relative; align-items: center; flex-wrap: wrap; gap: 0.35rem; padding-block: 0.5rem; }
+  .portfolio-wordmark { flex: 1; font-size: 0.95rem; }
+  .portfolio-nav-controls { order: 2; gap: 0.25rem; }
+  .portfolio-nav-links { order: 3; }
+  .portfolio-language-toggle { justify-content: center; min-width: 2.75rem; padding-inline: 0.45rem; }
+  .portfolio-menu-toggle { display: inline-flex; width: 2.75rem; height: 2.75rem; align-items: center; justify-content: center; border: 1px solid var(--portfolio-border); border-radius: 0.4rem; background: transparent; color: inherit; cursor: pointer; }
+  .portfolio-menu-toggle svg { width: 1.35rem; height: 1.35rem; fill: none; stroke: currentColor; stroke-linecap: round; stroke-width: 2; }
+  .portfolio-menu-toggle:focus-visible { outline: 3px solid #15803d; outline-offset: 2px; }
+  html.dark .portfolio-menu-toggle:focus-visible { outline-color: #4ade80; }
+  .portfolio-nav-links { display: flex; width: 100%; max-height: 0; flex-direction: column; align-items: stretch; gap: 0.15rem; overflow: hidden; padding: 0; opacity: 0; visibility: hidden; transform: translateY(-0.4rem); transition: max-height 240ms ease, opacity 180ms ease, transform 240ms ease, padding 240ms ease, visibility 0s linear 240ms; }
+  .portfolio-nav-inner:has(.portfolio-nav-controls [data-menu-toggle][aria-expanded="true"]) .portfolio-nav-links { max-height: 24rem; padding: 0.5rem 0 0.25rem; opacity: 1; visibility: visible; transform: translateY(0); transition-delay: 0s; }
+  .portfolio-nav-links li { width: 100%; }
+  .portfolio-nav-links a { width: 100%; min-height: 2.75rem; padding-inline: 0.65rem; font-size: 0.95rem; }
+  .portfolio-nav-links li:last-child { justify-content: flex-start; }
+  .portfolio-theme-toggle { width: 2.75rem; min-height: 2.75rem; padding: 0; }
   .portfolio-project-grid { gap: 1rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
+  .portfolio-nav-links { transition: none; }
 }

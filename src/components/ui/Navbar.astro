@@ -7,16 +7,18 @@ const nav = locale === "es" ? ["Inicio", "Servicios", "Proyectos", "Experiencia"
 <nav aria-label={locale === "es" ? "Navegación principal" : "Main navigation"} class="portfolio-nav sticky flex-wrap">
   <div class="portfolio-wrap portfolio-nav-inner">
     <a href={locale === "es" ? "/es/" : "/en/"} class="portfolio-wordmark" aria-label={copy.nav[0]}>MENDOZA000</a>
-    <ul class="portfolio-nav-links">
+    <ul id="portfolio-nav-links" class="portfolio-nav-links">
       <li><a href="#top">{nav[0]}</a></li>
       <li><a href="#services">{nav[1]}</a></li>
       <li><a href="#projects">{nav[2]}</a></li>
       <li><a href="#experiences">{nav[3]}</a></li>
       <li><a href="#contact">{nav[4]}</a></li>
-      <li><a class="px-2 py-2 rounded-lg font-semibold hover:underline" href="https://devstopia.vercel.app" target="_blank" rel="noreferrer">{copy.blog}</a></li>
-      <li><a lang={locale === "es" ? "en" : "es"} hreflang={locale === "es" ? "en" : "es"} class="px-2 py-2 rounded-lg font-bold underline" href={locale === "es" ? "/en/" : "/es/"}>{locale === "es" ? "English" : "Español"}</a></li>
-      <li><button type="button" lang={locale} class="portfolio-theme-toggle" data-theme-toggle data-theme-label-light={locale === "es" ? "Cambiar al tema claro" : "Switch to light theme"} data-theme-label-dark={locale === "es" ? "Cambiar al tema oscuro" : "Switch to dark theme"} aria-label={locale === "es" ? "Cambiar tema" : "Toggle color theme"} aria-pressed="false"></button></li>
     </ul>
+    <div class="portfolio-nav-controls">
+      <a lang={locale === "es" ? "en" : "es"} hreflang={locale === "es" ? "en" : "es"} class="portfolio-language-toggle" href={locale === "es" ? "/en/" : "/es/"}>{locale === "es" ? "EN" : "ES"}</a>
+      <button type="button" lang={locale} class="portfolio-theme-toggle" data-theme-toggle data-theme-label-light={locale === "es" ? "Cambiar al tema claro" : "Switch to light theme"} data-theme-label-dark={locale === "es" ? "Cambiar al tema oscuro" : "Switch to dark theme"} aria-label={locale === "es" ? "Cambiar tema" : "Toggle color theme"} aria-pressed="false"><svg data-theme-icon="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg><svg data-theme-icon="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.9 13A9 9 0 0 1 11 3.1 9 9 0 1 0 20.9 13Z"/></svg></button>
+      <button type="button" lang={locale} class="portfolio-menu-toggle" aria-label={locale === "es" ? "Abrir menú" : "Open menu"} aria-expanded="false" aria-controls="portfolio-nav-links" data-menu-toggle><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+    </div>
   </div>
 </nav>
 <script>
@@ -24,9 +26,29 @@ const nav = locale === "es" ? ["Inicio", "Servicios", "Proyectos", "Experiencia"
     const dark = document.documentElement.classList.contains("dark");
     button.setAttribute("aria-pressed", String(dark));
     button.setAttribute("aria-label", dark ? button.dataset.themeLabelLight! : button.dataset.themeLabelDark!);
-    button.textContent = dark ? (button.lang === "es" ? "Claro" : "Light") : (button.lang === "es" ? "Oscuro" : "Dark");
+    button.dataset.activeTheme = dark ? "dark" : "light";
   };
   const initializeThemeButtons = () => {
+    const menuButton = document.querySelector<HTMLButtonElement>("[data-menu-toggle]");
+    const menu = document.querySelector<HTMLUListElement>("#portfolio-nav-links");
+    if (menuButton && menu && menuButton.dataset.initialized !== "true") {
+      menuButton.dataset.initialized = "true";
+      const closeMenu = () => {
+        menuButton.setAttribute("aria-expanded", "false");
+        menuButton.setAttribute("aria-label", menuButton.lang === "en" ? "Open menu" : "Abrir menú");
+      };
+      menuButton.onclick = () => {
+        const expanded = menuButton.getAttribute("aria-expanded") !== "true";
+        menuButton.setAttribute("aria-expanded", String(expanded));
+        menuButton.setAttribute("aria-label", expanded ? (menuButton.lang === "en" ? "Close menu" : "Cerrar menú") : (menuButton.lang === "en" ? "Open menu" : "Abrir menú"));
+      };
+      menu.addEventListener("click", (event) => {
+        if ((event.target as HTMLElement).closest("a")) closeMenu();
+      });
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") closeMenu();
+      });
+    }
     document.querySelectorAll<HTMLButtonElement>("[data-theme-toggle]").forEach((button) => {
       syncThemeButton(button);
       button.onclick = () => {
